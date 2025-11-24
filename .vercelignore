@@ -1,0 +1,84 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+*.env
+
+# Logs
+logs/
+*.log
+**/logs/
+**/*.log
+
+# Build outputs (will be generated during build)
+dist/
+build/
+**/dist/
+**/build/
+
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test files
+**/__tests__/
+**/*.test.js
+**/*.spec.js
+coverage/
+
+# Documentation
+Docs/
+*.md
+!README.md
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Git
+.git/
+.gitignore
+
+# Temporary files
+*.tmp
+*.temp
+nul
+**/nul
+
+# Plan files
+plan.plan.md
+*.plan.md
+
+# Referans images
+Referans Image/
+
+# Workspace files
+*.code-workspace
+
+# Backend specific
+backend/uploads/
+backend/logs/
+backend/nul
+
+# Frontend specific
+frontend/dist/
+frontend/.vite/
+
+# Admin specific
+admin/dist/
+admin/.vite/
+
+
+
+
+
+
+

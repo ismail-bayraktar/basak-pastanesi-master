@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "installCommand": "cd ../.. && corepack enable && corepack use pnpm@8.15.8 && pnpm install --frozen-lockfile --prod=false",
+  "buildCommand": "cd ../.. && pnpm turbo run build --filter=@tulumbak/admin...",
+  "outputDirectory": "dist",
+  "ignoreCommand": "npx turbo-ignore",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}

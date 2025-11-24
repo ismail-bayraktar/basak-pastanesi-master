@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hakkımızda - TulumBak</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Montserrat:wght@700&amp;family=Nunito:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+      body {
+        font-family: 'Nunito', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+      }
+      .font-nunito { font-family: 'Nunito', sans-serif; }
+      .font-montserrat { font-family: 'Montserrat', sans-serif; }
+      .font-inter { font-family: 'Inter', sans-serif; }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#FF8A5B",
+              "secondary": "#5C8D89",
+              "background-light": "#F7F3E9",
+              "background-dark": "#23190f",
+              "text-main": "#333333",
+              "text-main-dark": "#F7F3E9"
+            },
+            fontFamily: {
+              "display": ["Montserrat", "sans-serif"],
+              "body": ["Nunito", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-text-main dark:text-text-main-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- TopNavBar Section -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center justify-between whitespace-nowrap border-b border-solid border-text-main/10 dark:border-text-main-dark/10 px-4 sm:px-8 lg:px-16 xl:px-24 py-3">
+<div class="flex items-center gap-4 text-text-main dark:text-text-main-dark">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-text-main dark:text-text-main-dark text-xl font-bold font-montserrat tracking-tight">TulumBak</h2>
+</div>
+<div class="hidden lg:flex flex-1 justify-center gap-8">
+<div class="flex items-center gap-9">
+<a class="text-text-main dark:text-text-main-dark text-sm font-medium" href="#">Anasayfa</a>
+<a class="text-text-main dark:text-text-main-dark text-sm font-medium" href="#">Ürünler</a>
+<a class="text-primary dark:text-primary text-sm font-bold" href="#">Hakkımızda</a>
+<a class="text-text-main dark:text-text-main-dark text-sm font-medium" href="#">İletişim</a>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-primary text-white text-sm font-bold">
+<span class="truncate">Sipariş Ver</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-primary/20 dark:bg-primary/30 text-text-main dark:text-text-main-dark gap-2 text-sm font-bold">
+<span class="material-symbols-outlined text-xl">search</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-primary/20 dark:bg-primary/30 text-text-main dark:text-text-main-dark gap-2 text-sm font-bold">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="w-full @container">
+<div class="flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-8 text-center" data-alt="A close-up shot of freshly made baklava, glistening with syrup and sprinkled with pistachios." style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJKDk19pQ_Ub8Abu4wPokq32-lp9bu4L1cmkC6DoqCmkWjGNxccbx-O6B8fw0u8yclu4MgYTlG1EnI381DGs_ue2LpNw_CEyzriqsjvgmbpYPkBrId_vUTbUHo-m8r8sRBlmPzk9ex0c9dPwyX4KvWvHGDpBym-Yr6TbCCfUqwvO50FrwjE4NAe-USm47mVCjurSnAQ2Zw5RP1lGy-3F5KfZm0spM1FIX0YCj-EJQ2RzhbDxnb1kKGejDbZOLsdNjw_mJ7qekSs90");'>
+<div class="flex flex-col gap-4 max-w-3xl">
+<h1 class="text-white font-montserrat text-4xl font-bold leading-tight tracking-tight @[480px]:text-5xl @[768px]:text-6xl">Nesillerdir Süren Lezzet Mirası</h1>
+<p class="text-white/90 font-nunito text-base font-normal leading-normal @[480px]:text-lg">TulumBak'ın kalite, doğallık ve güvenle harmanlanmış kuruluş hikayesine hoş geldiniz.</p>
+</div>
+</div></section>
+<!-- Feature Section - Two Columns -->
+<section class="px-4 sm:px-8 lg:px-16 xl:px-24 py-16 md:py-24">
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+<div class="flex flex-col gap-4">
+<h2 class="font-montserrat text-3xl font-bold leading-tight tracking-tight text-text-main dark:text-text-main-dark">Biz Kimiz?</h2>
+<p class="font-nunito text-base font-normal leading-relaxed text-text-main/80 dark:text-text-main-dark/80">TulumBak, yılların tecrübesiyle en kaliteli malzemeleri bir araya getiren bir aile geleneğidir. Her şey, büyükbabamızın küçük dükkanında başladı. O günden bugüne, aynı tutku ve özenle çalışıyoruz. Misyonumuz, size en doğal ve en lezzetli baklavayı sunmaktır.</p>
+<p class="font-nunito text-base font-normal leading-relaxed text-text-main/80 dark:text-text-main-dark/80">Bu yolculukta, geleneksel tariflerimizi modern bir dokunuşla harmanlayarak, damaklarda unutulmaz izler bırakan lezzetler yaratıyoruz.</p>
+</div>
+<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover rounded-xl" data-alt="A vintage, black and white photo of the original TulumBak shop with its founder standing proudly in front." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCWhf1hPl9az3x6cCzRfGVmFEiHEgNQZD--_-3QUiFj3O6jwYVjsJt1e1sx4kSq_zp8gIx8BM9zK_U2ngBdHgwEYlLCrGgxgsGESngGacUykWiQzw9XrO3ln_xXlHV-FFN2h9C2YWdDXV36FFkqhHl0F4ES8APAPnwrdqCT7f6dyns7FBUmOhQJoqIGnzmNJs3zQv7arCv6Rs3BgO646dz7Is1eaRWpB_iU5miumg1S8kssh1Oiq0QzIU6lFr1AwOneDbAguP6Bxx4");'></div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="px-4 sm:px-8 lg:px-16 xl:px-24 py-16 md:py-24 bg-white dark:bg-background-dark/50">
+<div class="max-w-6xl mx-auto flex flex-col gap-10">
+<div class="text-center">
+<h2 class="font-montserrat text-3xl font-bold leading-tight tracking-tight text-text-main dark:text-text-main-dark">Değerlerimiz</h2>
+<p class="mt-2 text-base text-text-main/80 dark:text-text-main-dark/80 max-w-2xl mx-auto">Lezzetimizin sırrı, ödün vermediğimiz ilkelerimizde saklı.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="flex flex-col items-center text-center gap-3 rounded-lg p-6">
+<div class="flex items-center justify-center size-14 rounded-full bg-secondary/10 text-secondary">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-montserrat text-lg font-bold">Kalite</h3>
+<p class="text-sm font-normal leading-normal text-text-main/80 dark:text-text-main-dark/80">Sadece en iyi fıstık, en saf tereyağı ve en taze malzemeleri kullanırız.</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center gap-3 rounded-lg p-6">
+<div class="flex items-center justify-center size-14 rounded-full bg-secondary/10 text-secondary">
+<span class="material-symbols-outlined text-3xl">eco</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-montserrat text-lg font-bold">Doğallık</h3>
+<p class="text-sm font-normal leading-normal text-text-main/80 dark:text-text-main-dark/80">Ürünlerimizde hiçbir katkı maddesi veya koruyucu bulunmaz.</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center gap-3 rounded-lg p-6">
+<div class="flex items-center justify-center size-14 rounded-full bg-secondary/10 text-secondary">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-montserrat text-lg font-bold">Güven</h3>
+<p class="text-sm font-normal leading-normal text-text-main/80 dark:text-text-main-dark/80">Hijyenik koşullarda, şeffaf bir üretim süreciyle hizmet veririz.</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center gap-3 rounded-lg p-6">
+<div class="flex items-center justify-center size-14 rounded-full bg-secondary/10 text-secondary">
+<span class="material-symbols-outlined text-3xl">menu_book</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-montserrat text-lg font-bold">Gelenek</h3>
+<p class="text-sm font-normal leading-normal text-text-main/80 dark:text-text-main-dark/80">Nesillerdir aktarılan tariflerimizi modern bir dokunuşla sunarız.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="w-full py-16 md:py-24 px-4 sm:px-8 lg:px-16 xl:px-24">
+<div class="max-w-6xl mx-auto flex flex-col items-center gap-12">
+<div class="text-center">
+<h2 class="font-montserrat text-3xl font-bold leading-tight tracking-tight text-text-main dark:text-text-main-dark">Ustalarımızla Tanışın</h2>
+<p class="mt-2 text-base text-text-main/80 dark:text-text-main-dark/80 max-w-2xl mx-auto">Baklavalarımız, yıllarını bu sanata adamış, işini tutkuyla yapan maharetli ustalarımızın ellerinden çıkıyor.</p>
+</div>
+<div class="w-full h-96 bg-cover bg-center rounded-xl" data-alt="A warm, candid group photo of the entire TulumBak team, including chefs and staff, smiling together in their kitchen." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-jEsI2h33eNKVUyDkPSO_8R9ZTLY04z5DZBcD0J3x23LHrJ2LzF8gcR2sdTlXLk75eBWDP81QBo3Qee36VWTrvsNRAbgKKfU352AdD_PkGHAF6lsYFdwa3ASys0bT0iiDJsNZh5eFDtJZkERHJdnerKd11qvDpT-7_BDSW-LAUkYgY3X2oR9Gc-cyERZZPKvLWB9BbIpCcCV-1h795IKZQjqwvBS1-M8lPzEe0xhcpGr6GwJWUCmAk3WbVsTZ3CuIe3ixhlWu96U');"></div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="w-full py-16 md:py-24 px-4 sm:px-8 lg:px-16 xl:px-24">
+<div class="max-w-4xl mx-auto text-center flex flex-col items-center gap-6">
+<h2 class="font-montserrat text-3xl font-bold leading-tight tracking-tight text-text-main dark:text-text-main-dark">Bu Eşsiz Lezzeti Deneyimleyin</h2>
+<p class="text-base text-text-main/80 dark:text-text-main-dark/80">Geleneksel lezzetlerimizi modern dokunuşlarla birleştirdiğimiz benzersiz baklava çeşitlerimizi keşfetmeye hazır mısınız? Bir tıkla kapınıza gelsin.</p>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold">
+<span class="truncate">Lezzetlerimizi Keşfedin</span>
+</button>
+</div>
+</section>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TulumBak - Ürün Detay Sayfası</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Montserrat:wght@700&amp;family=Nunito:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FF7A00", // Warm Orange
+                        "secondary": "#388E3C", // Darker Fresh Green for better contrast
+                        "secondary-light": "#4CAF50", // Original Fresh Green
+                        "background-light": "#FFF8E1", // Cream/Light Beige
+                        "background-dark": "#23190f",
+                        "card-light": "#FAFAFA",
+                        "card-dark": "#2d2115",
+                        "text-light": "#181411",
+                        "text-dark": "#f8f7f5",
+                        "text-muted-light": "#8c755f",
+                        "text-muted-dark": "#a1907e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "heading": ["Montserrat", "sans-serif"],
+                        "body": ["Nunito", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", // increased default
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-body bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-text-muted-light/20 dark:border-text-muted-dark/20">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between whitespace-nowrap py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-text-light dark:text-text-dark">
+<div class="text-primary">
+<svg class="size-7" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path></svg>
+</div>
+<h2 class="font-heading text-xl font-bold leading-tight tracking-[-0.015em] text-text-light dark:text-text-dark">TulumBak</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Ana Sayfa</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Ürünler</a>
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Hakkımızda</a>
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">İletişim</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end items-center gap-2 sm:gap-4">
+<div class="hidden md:block">
+<label class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted-light dark:text-text-muted-dark">search</span>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-black/5 dark:bg-white/5 h-10 placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark pl-10 pr-4 text-sm font-normal leading-normal" placeholder="Ara..." value=""/>
+</label>
+</div>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-black/5 dark:bg-white/5 text-text-light dark:text-text-dark hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-black/5 dark:bg-white/5 text-text-light dark:text-text-dark hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA205-1p34CT4CNtNK7nZjcyCydmVR-Xuq55g5yCIZONDTYDrG75_pIJfNfGXuYDT5WE03C7FZcm_VKPUbZWgxxOtgH6dYRANMPUnoKQfRvGJwUSI_vOE3-8QQdxlWg7R30YFlTvcYL6T8wvd7C_BKD1LSfqUVgXi5CDXh6rM18Zqs3e0__278qN9YgKJxNh58GnQy14oil2L3ksPyvVJDY3YVp_3fVIsrBLnK-uAplOIt-GHmibWRp2iw4epUlvc-RmyatWz8V2Wk");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="layout-container flex h-full grow flex-col">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="layout-content-container flex flex-col w-full">
+<div class="flex flex-wrap gap-2 pb-6">
+<a class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Anasayfa</a>
+<span class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium leading-normal">/</span>
+<a class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Baklavalar</a>
+<span class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium leading-normal">/</span>
+<span class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">Fıstıklı Kuru Baklava</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+<div class="flex flex-col gap-4">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl aspect-square shadow-lg" data-alt="Close-up shot of a slice of pistachio baklava showing its flaky layers and green pistachio filling." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmkNOSCIED79KDyLWIN1suNjdFVLjq5Ls6NcENXJA9JhxrgN8uHaqaQWUkb7IWWQkbI1nkUJwYI-oNrdrCxHQqrPSD7KZfhNfPXH_WibPu9Sd1zDtk5GTeFtzYLXoMEeA-iUxB14noDnpHb89fMgbjodkr8xt0dgQ6O8wjF-wIozKRNXFYNR1F0r61xRCFGddm4bi3TC37bQ0erd982N_VoRkRmvPE8cCp5LXf7Zk2Q1ke7n-nLiZGStHsU55nZPUo9g-7QnzmH18");'></div>
+<div class="grid grid-cols-4 gap-4">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-lg aspect-square border-2 border-primary" data-alt="Another angle of the pistachio baklava." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuASGwDOvLKVAnc1XsfT_b1OHSIKXEQGdGEAM_wCjhNkk3cI730cr2jCvZxrN-xKMK3KEeQnswID7XOvyJVEp8hSFvGu-h0sn-M69-DmPhFcv5sv5YBoaj2s6btqjS5y66D07hYDrh4NIlFMQsA0QwyCkodCtxnpF3eu5hx5I5OZvce7mWeux49KutugYK3VXbTrrsNCyehQv5-nTEBeQVm8kGMtHjzkJysxcLa8-yb0eDpE8_qGxuKtBex8kXWWHPHKS6-IOt5Q_jk");'></div>
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-lg aspect-square opacity-60 hover:opacity-100 transition-opacity cursor-pointer" data-alt="Top-down view of baklava in a tray." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUmAkDUcB8hRoA6JOO-uUjiaZZ2nU6gg7YXHZ4xpg_hBEiv1NbwQ4VoM8iQPaL2w811bhLu-1fOuaiZYrlsJETYiqduTMF-CuQ58Ayfpe2n5WOIxvoyECg02nbhV8g0ooOt0cLmmyalxhDmFJMEDBGfGNB-1oZHSIzNwjDo_45yWli17ohbm8uHuy-QwAdrJTmv_urQBhs_NGDXuUuLKVf2HzkMEP67F-TKTLE-pzPL1iw7s85_faglnk9pHuliQdwrREGWR8kZxY");'></div>
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-lg aspect-square opacity-60 hover:opacity-100 transition-opacity cursor-pointer" data-alt="Premium packaging box for the baklava." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnsElqO_xdJUpogKQVBvYpjUR3x1c2viOxla4w3iKCnQM4kH2-ObkTJa8CFzDW-3H4v3BFrpJXb3ZT7rlMrIY6rR96z2vDoamRpPYfIn7xGpyxwZkn1Kx2KYTncubXy7qj8GTum4OQyKtEr7gZ06pEhKZXvN5BTD_ehyT1SR3RWWnXD4jW8fGBoTMouM_75BNBIK79N8cR6K0WOnSEaB5FSmqgtNVpCiYzM1QRBXZa0bt2k8srRPkS3qSCz78IDysVWmVM1X_JJBY");'></div>
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-lg aspect-square opacity-60 hover:opacity-100 transition-opacity cursor-pointer" data-alt="A hand picking a piece of baklava." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCGBVAKUGHyjQOjgTWS-3ITspeTKvpKvTq-9ssXFrYyYX7uPWHcOK3faCPSRMHmp7KksRsT3B2H-55HkHo4Tldq67eZFaB2j8672EPrWWvI5ncgzVS7IHaiNEEBJm4Trj7EF-Xd0hOn692xGaN4_GYw8m56a25wI4_K4EFQc9tezbQ9Wm-mE3cC9QckbO5L0-Uo8Iv4Xr7YNSaVv1eoudQc0q50WgX9FOsp_AMHXcGJPDFUXhw5Pm4iLbmPpPeTlv_CdXv_Asl5ezo");'></div>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<h1 class="font-heading text-text-light dark:text-text-dark text-4xl lg:text-5xl font-bold leading-tight tracking-tighter">Antep Fıstıklı Kuru Baklava</h1>
+<p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">
+                                Gaziantep'in en kaliteli fıstıkları ve Urfa'nın saf tereyağı ile hazırlanan, nesillerdir süregelen geleneksel bir lezzet şöleni.
+                            </p>
+<div class="flex flex-wrap gap-4 pt-2">
+<div class="flex items-center gap-2 rounded-full bg-secondary/10 dark:bg-secondary/20 px-3 py-1 text-sm font-semibold text-secondary dark:text-green-300">
+<span class="material-symbols-outlined text-base">eco</span> 100% Doğal Şeker
+                                </div>
+<div class="flex items-center gap-2 rounded-full bg-secondary/10 dark:bg-secondary/20 px-3 py-1 text-sm font-semibold text-secondary dark:text-green-300">
+<span class="material-symbols-outlined text-base">pan_tool</span> El Yapımı
+                                </div>
+<div class="flex items-center gap-2 rounded-full bg-secondary/10 dark:bg-secondary/20 px-3 py-1 text-sm font-semibold text-secondary dark:text-green-300">
+<span class="material-symbols-outlined text-base">calendar_today</span> Günlük Üretim
+                                </div>
+</div>
+<p class="font-heading text-4xl font-bold text-text-light dark:text-text-dark">350,00 TL</p>
+<div class="flex flex-col gap-3">
+<label class="text-sm font-bold text-text-light dark:text-text-dark">Gramaj Seçin</label>
+<div class="grid grid-cols-3 gap-3">
+<button class="flex items-center justify-center rounded-lg h-12 border-2 border-primary bg-primary/10 text-primary text-sm font-bold">500gr</button>
+<button class="flex items-center justify-center rounded-lg h-12 border border-text-muted-light/30 text-text-muted-light dark:text-text-muted-dark text-sm font-medium hover:border-primary transition-colors">1 Kg</button>
+<button class="flex items-center justify-center rounded-lg h-12 border border-text-muted-light/30 text-text-muted-light dark:text-text-muted-dark text-sm font-medium hover:border-primary transition-colors">1 Tepsi</button>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<div class="flex items-center justify-between rounded-lg border border-text-muted-light/30 w-full sm:w-32 px-2">
+<button class="h-10 w-10 text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors">-</button>
+<span class="font-bold text-text-light dark:text-text-dark">1</span>
+<button class="h-10 w-10 text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors">+</button>
+</div>
+<button class="flex flex-1 max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 bg-primary text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                                    Sepete Ekle
+                                </button>
+</div>
+<div class="flex flex-col gap-2 pt-6 border-t border-text-muted-light/20 dark:border-text-muted-dark/20">
+<details class="group" open="">
+<summary class="flex cursor-pointer list-none items-center justify-between py-3 font-medium text-text-light dark:text-text-dark">
+<span>Ürün Detayları</span>
+<div class="transition-transform duration-300 group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed pb-3">40 kat incecik yufkanın arasına serpiştirilmiş, Gaziantep'in boz iç fıstığı ile hazırlanan bu eşsiz lezzet, geleneksel yöntemlerle ve odun ateşinde pişirilir. İçeriğinde sadece pancar şekeri, saf Urfa tereyağı, en kaliteli un ve Antep fıstığı bulunur. Hiçbir koruyucu ve katkı maddesi içermez.</p>
+</details>
+<details class="group">
+<summary class="flex cursor-pointer list-none items-center justify-between py-3 font-medium text-text-light dark:text-text-dark border-t border-text-muted-light/20 dark:border-text-muted-dark/20">
+<span>Alerjen Bilgileri</span>
+<div class="transition-transform duration-300 group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed pb-3">Bu ürün gluten, süt ve süt ürünleri (tereyağı dahil), ve antep fıstığı içerir. Eser miktarda ceviz ve fındık içerebilir.</p>
+</details>
+<details class="group">
+<summary class="flex cursor-pointer list-none items-center justify-between py-3 font-medium text-text-light dark:text-text-dark border-t border-text-muted-light/20 dark:border-text-muted-dark/20">
+<span>Paketleme ve Saklama</span>
+<div class="transition-transform duration-300 group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed pb-3">Ürünlerimiz, tazeliğini koruması için özel olarak tasarlanmış vakumlu ve şık metal kutularda gönderilir. Serin ve kuru yerde saklayınız. Yaz aylarında buzdolabında muhafaza edip, tüketmeden 30 dakika önce oda sıcaklığına getirmeniz tavsiye edilir.</p>
+</details>
+</div>
+</div>
+</div>
+<div class="pt-20 mt-16 border-t border-text-muted-light/20 dark:border-text-muted-dark/20">
+<h2 class="font-heading text-3xl font-bold text-center text-text-light dark:text-text-dark mb-8">Bunları da Beğenebilirsiniz</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+<div class="w-full h-48 bg-cover bg-center" data-alt="Cevizli Baklava" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHGixyARomAU1Y69ZF-O9ZUOxbmo2yfNvqQNHsWAcjVZcz-K1nMdckF5OG0kG5Vnl_fqX_ZZKUH6mUAUCWn5781gbM9sFVrRG9vLXJxtcnCCfgzbjFN1hULrZSuyxus42AZ7olcod-AVRWt_dx7KLOpBzcl0YQZn5OUM1cmYWxYAUXIb0TutuayjMGtlVLM9MA7sM4XsHSyKvq7xbqUBjdNK3WCxuhocarIrLTcB7msnBo3Z77RfJaKLK4IrRPkNoeqNpnU23X7j0');"></div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-bold font-heading text-lg text-text-light dark:text-text-dark">Cevizli Ev Baklavası</h3>
+<p class="text-primary font-bold mt-2">280,00 TL</p>
+<button class="w-full mt-4 rounded-lg h-10 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 transition-colors">İncele</button>
+</div>
+</div>
+<div class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+<div class="w-full h-48 bg-cover bg-center" data-alt="Şöbiyet" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKqRhoNljiUkrU_H98gtpWsXBY6QprCGuDQaShoBc9g8LA63HnqwH0WWphU-H3KQSLtgPzU-gcRE8BIIE0le15c-MMUV4HDp14LOJ-haTLCIvifErSbhqnIg91ZBBKaz2QgsUa6eHir-1I0QbTzQGqcoOe4Cmdqk_xASH0zsVOp4CoE0VcYATtquFO0EcX12JXC7bvrsALMkwmxUcfM6E_JZMI04Z2r-ljqd067Z6eD98gzbQVnMSJHVbwXyKsw-CvWUF3MhKXk_M');"></div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-bold font-heading text-lg text-text-light dark:text-text-dark">Kaymaklı Şöbiyet</h3>
+<p class="text-primary font-bold mt-2">380,00 TL</p>
+<button class="w-full mt-4 rounded-lg h-10 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 transition-colors">İncele</button>
+</div>
+</div>
+<div class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+<div class="w-full h-48 bg-cover bg-center" data-alt="Fıstık Sarma" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhIsWJdgYTQ34G53xmSRTYn912OU2CatokQCH11grVrjyGYDCDq0cMq3MSnuvs3CwJrRybOp_MkoAU2Om3O1eFHZNKOT7xUbKiieCrQYTOC_ed6Vt84nx6BIu8E5FRLsDnK66ekduUkppfBqcRFZorSte5jmaUoVuOMAACs9bG6Bn8EzUYWa5YlNN2lJ-3xKQYuIpOCEBx2QmzGU_pHHjA7p0kOyE5jrmjv0uBKeRbrHHUT3w2U8p1Ott7rcHF2-lYXUg3vw6v1vY');"></div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-bold font-heading text-lg text-text-light dark:text-text-dark">Fıstık Sarma</h3>
+<p class="text-primary font-bold mt-2">420,00 TL</p>
+<button class="w-full mt-4 rounded-lg h-10 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 transition-colors">İncele</button>
+</div>
+</div>
+<div class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+<div class="w-full h-48 bg-cover bg-center" data-alt="Midye Baklava" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4KVHC3eck_0ImFhTybsQCjMBSmXbMxIHziuogCwEE3aMqq2wMFhUi4m70iHjcr6p4qYrEeu42AwB3MRLdJr_JDO8WihwHyRqrRyN6IQaljvcOXwLrgcDfLS8d3k1d4w_sX2NPXF1AYv3_94_ue2zM6k-h7l154C8xXBZ-nXmkJsK3ONFfHWVYJDmT61g4_lowVb0rT5LGeljGT5jSv6EXKuta326PcPJRDmjqaIgiBzRqAkqG8PfBvfd-BDRjRteEcQfBL41wzw4');"></div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-bold font-heading text-lg text-text-light dark:text-text-dark">Midye Baklava</h3>
+<p class="text-primary font-bold mt-2">360,00 TL</p>
+<button class="w-full mt-4 rounded-lg h-10 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 transition-colors">İncele</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

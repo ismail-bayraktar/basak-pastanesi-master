@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TulumBak - İletişim</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Montserrat:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#FF7A00",
+            "background-light": "#FFF7E8",
+            "background-dark": "#23190f",
+            "text-light": "#181411",
+            "text-dark": "#f8f7f5",
+            "card-light": "#F5F0E6",
+            "card-dark": "#3a2c1d",
+            "border-light": "#e6e0db",
+            "border-dark": "#4f3e2b",
+            "accent-green": "#28A745",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"],
+            "heading": ["Montserrat", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">bakery_dining</span>
+<h2 class="text-text-light dark:text-text-dark text-lg font-bold font-heading tracking-[-0.015em]">TulumBak</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Anasayfa</a>
+<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Ürünler</a>
+<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Hakkımızda</a>
+<a class="text-primary dark:text-primary text-sm font-bold leading-normal" href="#">İletişim</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
+<span class="truncate">Sipariş Ver</span>
+</button>
+<button class="hidden sm:flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-card-light dark:bg-card-dark text-text-light dark:text-text-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+<div class="flex flex-col gap-10">
+<!-- HeaderImage -->
+<div class="w-full">
+<div class="bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-[320px]" data-alt="A modern, clean image showing beautifully arranged baklava on a plate" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBbpnyHPh4TM6mxDFqfjHdc6XT9dCJ6E-yMKlzWYisive_9bjJwtLgnSsxshDezF5j6wnXBOsNte9wr0GJ0ibZZRUZ1h2xUWcoBH2WsZjzl9vRbDKCYFpyGK2u-chOEd9jHggNQsHOXKhxse_VlyNhuZIP9rh_Ud5FhT4deZYZX8IOogN6oLtq0rzVfM0A1A_je0H-wdfaPhEDZmqQufkyKw0BNgeJwFiS2K69ef9C8sv8Y5H9A_HbwRL2HW5EK1asId60QbIQkZCs");'>
+<div class="flex p-6 sm:p-8"><h1 class="text-white text-4xl sm:text-5xl font-bold font-heading leading-tight">Bize Ulaşın</h1></div>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+<!-- Left Column: Info & Map -->
+<div class="lg:col-span-2 flex flex-col gap-10">
+<!-- SectionHeader -->
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold font-heading tracking-[-0.015em]">İletişim Bilgileri</h2>
+<!-- TextGrid -->
+<div class="grid grid-cols-1 gap-4">
+<div class="flex flex-1 gap-4 rounded-lg bg-card-light dark:bg-card-dark p-4 flex-col border border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-light dark:text-text-dark text-base font-bold font-heading">Adres</h3>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm font-normal leading-normal">Baklava Sokak No:123, Gaziantep, Türkiye</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-lg bg-card-light dark:bg-card-dark p-4 flex-col border border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-primary text-2xl">call</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-light dark:text-text-dark text-base font-bold font-heading">Telefon</h3>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm font-normal leading-normal">+90 555 123 45 67</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-lg bg-card-light dark:bg-card-dark p-4 flex-col border border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-primary text-2xl">mail</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-light dark:text-text-dark text-base font-bold font-heading">E-posta</h3>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm font-normal leading-normal">iletisim@tulumbak.com</p>
+</div>
+</div>
+</div>
+<!-- SectionHeader -->
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold font-heading tracking-[-0.015em] pt-5">Konumumuz</h2>
+<!-- Map -->
+<div class="flex">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-lg object-cover" data-alt="A map showing the location of TulumBak in Gaziantep, Turkey." data-location="Gaziantep" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNtI7cQQZJ80p8isBSJce7CC9uB4X_TErUYGKSDqiGnXqpPYmAd3_mXknXeWzSvnyiKghVC8-g93N02NLNl4Mi4tSPXNuTv4K102sJMpDJB4lmx8K9qZyu_8tw3y8a5E7wjKVsKOdpxajwvFzhmYNonEa5iCIClB0K3CBzi_vfydAIB4gigge5tC23LI7G0pnPTvhYLARMeoueLhPzdFfiULeAWl3t9g8eAxuF6xpTOJXIMnRH6Cjg2WvQp4sX2yPhe1fn00i3JHM");'></div>
+</div>
+</div>
+<!-- Right Column: Contact Form -->
+<div class="lg:col-span-3">
+<div class="bg-card-light dark:bg-card-dark p-6 sm:p-8 rounded-lg border border-border-light dark:border-border-dark h-full">
+<div class="flex flex-col gap-6 h-full">
+<div class="flex flex-col gap-2">
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold font-heading tracking-[-0.015em]">Bize Yazın</h2>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm font-normal leading-normal">Soru, görüş ve önerileriniz için formu doldurabilirsiniz.</p>
+</div>
+<form class="flex flex-col gap-4 flex-grow">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-text-light dark:text-text-dark mb-1.5" for="name">Adınız Soyadınız</label>
+<input class="block w-full rounded-md border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark shadow-sm focus:border-primary focus:ring-primary sm:text-sm text-text-light dark:text-text-dark placeholder:text-text-light/40 dark:placeholder:text-text-dark/40" id="name" name="name" placeholder="İsminizi girin" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-light dark:text-text-dark mb-1.5" for="email">E-posta Adresiniz</label>
+<input class="block w-full rounded-md border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark shadow-sm focus:border-primary focus:ring-primary sm:text-sm text-text-light dark:text-text-dark placeholder:text-text-light/40 dark:placeholder:text-text-dark/40" id="email" name="email" placeholder="ornek@mail.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-light dark:text-text-dark mb-1.5" for="subject">Konu</label>
+<input class="block w-full rounded-md border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark shadow-sm focus:border-primary focus:ring-primary sm:text-sm text-text-light dark:text-text-dark placeholder:text-text-light/40 dark:placeholder:text-text-dark/40" id="subject" name="subject" placeholder="Mesajınızın konusu" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-light dark:text-text-dark mb-1.5" for="message">Mesajınız</label>
+<textarea class="block w-full rounded-md border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark shadow-sm focus:border-primary focus:ring-primary sm:text-sm text-text-light dark:text-text-dark placeholder:text-text-light/40 dark:placeholder:text-text-dark/40" id="message" name="message" placeholder="Mesajınızı buraya yazın..." rows="5"></textarea>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors" type="submit">
+                          Mesajı Gönder
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-card-light dark:bg-card-dark border-t border-border-light dark:border-border-dark">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">bakery_dining</span>
+<h2 class="text-text-light dark:text-text-dark text-lg font-bold font-heading">TulumBak</h2>
+</div>
+<p class="text-sm text-text-light/70 dark:text-text-dark/70">Kaliteli, doğal ve güvenilir baklavanın adresi. Geleneksel lezzetler, modern dokunuşlarla.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-base font-bold text-text-light dark:text-text-dark font-heading">Hızlı Linkler</h3>
+<a class="text-sm text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-primary transition-colors" href="#">Anasayfa</a>
+<a class="text-sm text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-primary transition-colors" href="#">Ürünler</a>
+<a class="text-sm text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-primary transition-colors" href="#">Hakkımızda</a>
+<a class="text-sm text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-primary transition-colors" href="#">İletişim</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-base font-bold text-text-light dark:text-text-dark font-heading">Bizi Takip Edin</h3>
+<div class="flex gap-4">
+<a class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm-1.002 4.867a.96.96 0 100 1.92.96.96 0 000-1.92zm-2.881.012a5.12 5.12 0 1110.24 0 5.12 5.12 0 01-10.24 0zM12 15.338a3.338 3.338 0 100-6.676 3.338 3.338 0 000 6.676z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-8 border-t border-border-light dark:border-border-dark pt-8 text-center text-sm text-text-light/70 dark:text-text-dark/70">
+<p>© 2024 TulumBak. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+</div>
+<!-- WhatsApp Floating Button -->
+<a class="fixed bottom-6 right-6 bg-accent-green text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform" href="#">
+<svg class="h-8 w-8" fill="currentColor" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
+</svg>
+<span class="sr-only">WhatsApp ile İletişime Geç</span>
+</a>
+</div>
+</body></html>
