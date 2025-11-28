@@ -1,11 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "name": "basakpastanesi-web",
   "framework": "vite",
-  "installCommand": "cd ../.. && pnpm install --frozen-lockfile --prefer-offline",
-  "buildCommand": "cd ../.. && TURBO_FORCE=true pnpm --filter @basak-pastanesi/web build",
+  "buildCommand": "cd ../.. && pnpm install --frozen-lockfile && pnpm --filter @basak-pastanesi/web build",
   "outputDirectory": "dist",
-  "ignoreCommand": "npx turbo-ignore",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
@@ -16,9 +13,6 @@
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
-  ],
-  "github": {
-    "silent": true
-  }
+  ]
 }
 
