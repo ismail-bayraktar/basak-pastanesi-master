@@ -2,15 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "name": "basakpastanesi-api",
   "version": 2,
-  "installCommand": "echo 'Install step skipped for local build'",
   "buildCommand": "echo 'No build step required'",
   "ignoreCommand": "npx turbo-ignore",
   "outputDirectory": ".",
   "functions": {
     "api/index.js": {
       "maxDuration": 60,
-      "memory": 1024,
-      "includeFiles": "node_modules/**,package.json,config/**,controllers/**,middleware/**,models/**,routes/**,services/**,utils/**,schemas/**,app.js,server.js"
+      "memory": 1024
     }
   },
   "routes": [
