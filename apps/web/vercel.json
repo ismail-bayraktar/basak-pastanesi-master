@@ -1,8 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "name": "basak-pastanesi-web",
+  "name": "basakpastanesi-web",
   "framework": "vite",
-  "installCommand": "pnpm install --prod=false",
   "buildCommand": "pnpm build",
   "outputDirectory": "dist",
   "ignoreCommand": "npx turbo-ignore",
