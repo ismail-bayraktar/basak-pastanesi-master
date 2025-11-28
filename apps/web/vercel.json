@@ -3,6 +3,7 @@
   "buildCommand": "cd ../.. && pnpm install --frozen-lockfile && pnpm --filter @repo/constants --filter @repo/types --filter @repo/utils build && cd apps/web && pnpm build",
   "outputDirectory": "dist",
   "installCommand": "echo 'Install handled in buildCommand'",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
