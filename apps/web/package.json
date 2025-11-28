@@ -1,5 +1,6 @@
 {
   "name": "@basak-pastanesi/web",
+  "version": "1.0.1",
   "private": true,
   "engines": {
     "node": "20.x"
