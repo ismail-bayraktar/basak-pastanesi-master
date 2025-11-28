@@ -49,14 +49,6 @@ export const validateProduct = [
     .optional()
     .isInt({ min: 0 }).withMessage('Stock must be a non-negative integer')
     .toInt(),
-  body('sizes')
-    .optional()
-    .custom((value) => {
-      if (Array.isArray(value)) {
-        return value.every(v => typeof v === 'number' && v > 0);
-      }
-      return true;
-    }).withMessage('Sizes must be an array of positive numbers'),
   handleValidationErrors
 ];
 

@@ -321,7 +321,7 @@ class CourierIntegrationService {
             if (result.success) {
                 // Update order status
                 const updateData = {
-                    courierStatus: result.tulumbakStatus,
+                    courierStatus: result.orderStatus,
                     'courierIntegration.lastSyncAt': Date.now()
                 };
 
@@ -339,7 +339,7 @@ class CourierIntegrationService {
                 // Add status history
                 await this.addStatusHistory(
                     order._id,
-                    result.tulumbakStatus,
+                    result.orderStatus,
                     additionalData.note || `Durum güncellendi: ${status}`,
                     'courier',
                     additionalData.location
@@ -350,13 +350,13 @@ class CourierIntegrationService {
                     platform,
                     externalOrderId,
                     status,
-                    tulumbakStatus: result.tulumbakStatus
+                    orderStatus: result.orderStatus
                 });
 
                 return {
                     success: true,
                     orderId: order._id,
-                    status: result.tulumbakStatus
+                    status: result.orderStatus
                 };
             }
 

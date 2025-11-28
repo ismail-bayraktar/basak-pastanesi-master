@@ -14,9 +14,9 @@ const createAdmin = async () => {
     console.log("✅ MongoDB bağlantısı başarılı!");
 
     // Admin bilgileri
-    const adminEmail = "admin@tulumbak.com";
-    const adminPassword = "admin123";
-    const adminName = "Tulumbak Admin";
+    const adminEmail = "admin@basakpastanesi.com";
+    const adminPassword = "Basak2025!";
+    const adminName = "Basak Pastanesi Admin";
 
     // Mevcut admin kontrolü
     const existingAdmin = await adminModel.findOne({ email: adminEmail });
@@ -77,7 +77,7 @@ const createAdmin = async () => {
     console.log("\n✅ Admin hesabı başarıyla oluşturuldu!");
     console.log("\n📋 Admin Bilgileri:");
     console.log(`   Email: ${adminEmail}`);
-    console.log(`   Şifre: [GÜVENLİK: Şifre loglanmıyor]`);
+    console.log(`   Şifre: ${adminPassword}`);
     console.log(`   Rol: super_admin`);
     console.log(`   Yetkiler: Tüm yetkilere sahip`);
     console.log("\n⚠️  GÜVENLİK UYARISI: Şifre güvenlik nedeniyle loglanmıyor. İlk girişten sonra mutlaka değiştirin!");

@@ -8,8 +8,8 @@ import orderModel from '../models/OrderModel.js';
  */
 
 const DEFAULT_BRANCH = {
-  name: 'Tulumbak Ana Şube',
-  code: 'TULUMBAK_MAIN',
+  name: 'Basak Pastanesi Ana Şube',
+  code: 'BASAK_PASTANESI_MAIN',
   address: {
     street: 'Ana Şube Adresi',
     district: 'Merkez',
@@ -22,7 +22,7 @@ const DEFAULT_BRANCH = {
   },
   contact: {
     phone: '+90 555 000 0000',
-    email: 'info@tulumbak.com',
+    email: 'info@basakpastanesi.com',
     whatsapp: '+90 555 000 0000'
   },
   workingHours: {
@@ -62,7 +62,7 @@ async function setupDefaultBranch() {
 
     // Check if default branch already exists
     console.log('🔍 Checking for existing default branch...');
-    let defaultBranch = await branchModel.findOne({ code: 'TULUMBAK_MAIN' });
+    let defaultBranch = await branchModel.findOne({ code: 'BASAK_PASTANESI_MAIN' });
 
     if (defaultBranch) {
       console.log('✅ Default branch already exists:');

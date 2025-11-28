@@ -364,7 +364,7 @@ export default function CourierSettings() {
                     <Label htmlFor="restaurantId">Restaurant ID</Label>
                     <Input
                       id="restaurantId"
-                      placeholder="Tulumbak Restaurant ID"
+                      placeholder="Basak Pastanesi Restaurant ID"
                       value={config.restaurantId}
                       onChange={(e) => setConfig({ ...config, restaurantId: e.target.value })}
                     />

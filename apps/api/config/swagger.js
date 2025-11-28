@@ -10,12 +10,12 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Tulumbak Baklava API',
+      title: 'Basak Pastanesi Baklava API',
       version: '2.0.0',
       description: 'E-ticaret RESTful API Documentation',
       contact: {
-        name: 'Tulumbak Backend Team',
-        email: 'backend@tulumbak.dev'
+        name: 'Basak Pastanesi Backend Team',
+        email: 'backend@basakpastanesi.com'
       },
       license: {
         name: 'MIT',
@@ -28,7 +28,7 @@ const options = {
         description: 'Development server'
       },
       {
-        url: process.env.SWAGGER_PROD_URL || process.env.BACKEND_URL || 'https://api.tulumbak.com',
+        url: process.env.SWAGGER_PROD_URL || process.env.BACKEND_URL || 'https://api.basakpastanesi.com',
         description: 'Production server'
       }
     ],
@@ -123,7 +123,7 @@ export const swaggerDocs = (app) => {
   // Swagger UI
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
     customCss: '.swagger-ui .topbar { display: none }',
-    customSiteTitle: 'Tulumbak API Documentation'
+    customSiteTitle: 'Basak Pastanesi API Documentation'
   }));
 
   // JSON endpoint

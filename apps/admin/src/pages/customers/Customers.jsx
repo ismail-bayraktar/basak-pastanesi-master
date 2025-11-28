@@ -178,7 +178,7 @@ export default function Customers() {
               <Breadcrumb>
                 <BreadcrumbList>
                   <BreadcrumbItem className="hidden md:block">
-                    <BreadcrumbLink href="#">Tulumbak Admin</BreadcrumbLink>
+                    <BreadcrumbLink href="#">Basak Pastanesi Admin</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator className="hidden md:block" />
                   <BreadcrumbItem>

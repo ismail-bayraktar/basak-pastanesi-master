@@ -7,10 +7,10 @@ import { Html, Head, Body, Container, Section, Text, Img, Hr } from '@react-emai
  */
 export const EmailLayout = ({
   children,
-  logoUrl = 'https://tulumbak.com/logo.png',
+  logoUrl = 'https://basakpastanesi.com/logo.png',
   brandColor = '#d4af37',
-  storeName = 'Tulumbak İzmir Baklava',
-  storeEmail = 'info@tulumbak.com',
+  storeName = 'Basak Pastanesi İzmir Baklava',
+  storeEmail = 'info@basakpastanesi.com',
   storePhone = '0232 XXX XXXX',
   showKVKK = true,
   isMarketing = false
@@ -56,17 +56,17 @@ export const EmailLayout = ({
                 <Hr style={hrStyle} />
                 <Text style={kvkkTextStyle}>
                   Kişisel verileriniz KVKK kapsamında işlenmektedir.{' '}
-                  <a href="https://tulumbak.com/privacy" style={linkStyle}>
+                  <a href="https://basakpastanesi.com/privacy" style={linkStyle}>
                     Gizlilik Politikası
                   </a>
                   {isMarketing && (
                     <>
                       {' | '}
-                      <a href="https://tulumbak.com/email-preferences" style={linkStyle}>
+                      <a href="https://basakpastanesi.com/email-preferences" style={linkStyle}>
                         Email Tercihlerim
                       </a>
                       {' | '}
-                      <a href="https://tulumbak.com/unsubscribe" style={linkStyle}>
+                      <a href="https://basakpastanesi.com/unsubscribe" style={linkStyle}>
                         Abonelikten Çık
                       </a>
                     </>

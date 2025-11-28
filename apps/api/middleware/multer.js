@@ -4,7 +4,7 @@ import { getCloudinaryStorage } from "../config/cloudinary.js";
 // Use Cloudinary storage for production, memory storage for development
 const getStorage = () => {
     if (process.env.NODE_ENV === 'production') {
-        return getCloudinaryStorage('tulumbak-uploads');
+        return getCloudinaryStorage('basak-pastanesi-uploads');
     }
     // In development, use memory storage to avoid filesystem writes
     return multer.memoryStorage();

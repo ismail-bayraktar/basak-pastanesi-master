@@ -23,14 +23,3 @@ export interface AuthResponse {
   user?: User;
 }
 
-export interface AuthState {
-  token: string | null;
-  user: User | null;
-  isAuthenticated: boolean;
-  setToken: (token: string | null) => void;
-  setUser: (user: User | null) => void;
-  login: (credentials: LoginCredentials) => Promise<AuthResponse>;
-  register: (data: RegisterData) => Promise<AuthResponse>;
-  logout: () => void;
-  loadTokenFromStorage: () => void;
-}

@@ -4,6 +4,24 @@ export const API_ENDPOINTS = {
   AUTH: {
     LOGIN: '/api/user/login',
     REGISTER: '/api/user/register',
+    PROFILE: '/api/user/profile',
+    UPDATE_PROFILE: '/api/user/profile',
+  },
+
+  // User Addresses
+  ADDRESSES: {
+    LIST: '/api/user/addresses',
+    ADD: '/api/user/addresses',
+    UPDATE: (id: string) => `/api/user/addresses/${id}`,
+    DELETE: (id: string) => `/api/user/addresses/${id}`,
+    SET_DEFAULT: (id: string) => `/api/user/addresses/${id}/set-default`,
+  },
+
+  // User Favorites
+  FAVORITES: {
+    LIST: '/api/user/favorites',
+    ADD: '/api/user/favorites/add',
+    REMOVE: (productId: string) => `/api/user/favorites/${productId}`,
   },
 
   // Products
@@ -18,14 +36,16 @@ export const API_ENDPOINTS = {
     ADD: '/api/cart/add',
     UPDATE: '/api/cart/update',
     GET: '/api/cart/get',
+    REMOVE: '/api/cart/remove',
   },
 
   // Orders
   ORDERS: {
     PLACE: '/api/order/place',
     USER_ORDERS: '/api/order/userorders',
+    DETAIL: (id: string) => `/api/order/${id}`,
+    REORDER: (orderId: string) => `/api/order/reorder/${orderId}`,
     BANK_INFO: '/api/order/bank-info',
-    UPDATE_PAYTR: '/api/order/update-paytr-order',
   },
 
   // Payment
@@ -48,13 +68,20 @@ export const API_ENDPOINTS = {
 
   // Categories
   CATEGORIES: {
-    ACTIVE: '/api/category/active',        // Public - aktif kategoriler
-    LIST: '/api/category/list',            // Admin - tüm kategoriler
-    SINGLE: '/api/category/single',        // Admin - tekil kategori
+    ACTIVE: '/api/category/active',
+    LIST: '/api/category/list',
   },
 
   // Sliders
   SLIDERS: {
-    LIST: '/api/slider/list',              // Public - aktif sliderlar
+    LIST: '/api/slider/list',
+  },
+
+  // Reviews
+  REVIEWS: {
+    CREATE: '/api/reviews',
+    PRODUCT: (productId: string) => `/api/reviews/product/${productId}`,
+    USER: '/api/reviews/user',
   },
 } as const;
+

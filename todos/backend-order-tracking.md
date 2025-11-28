@@ -138,7 +138,7 @@ POST /api/sms/send-tracking-link
 - Request: { phone, trackingId, orderDetails }
 
 SMS Template:
-"Tulumbak siparişiniz: #ABC123. Takip için: https://tulumbak.com/track/ABC123"
+"Basak Pastanesi siparişiniz: #ABC123. Takip için: https://basakpastanesi.com/track/ABC123"
 ```
 
 ### 3. WhatsApp Integration (Opsiyonel)

@@ -37,16 +37,5 @@ export const authService = {
       user: response.data.data?.user
     };
   },
-
-  /**
-   * Verify token validity
-   */
-  async verifyToken(): Promise<{ valid: boolean }> {
-    try {
-      const response = await apiClient.get<ApiResponse<{ valid: boolean }>>('/api/user/verify');
-      return response.data.data;
-    } catch (error) {
-      return { valid: false };
-    }
-  },
 };
+

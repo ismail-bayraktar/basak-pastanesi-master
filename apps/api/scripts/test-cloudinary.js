@@ -57,7 +57,7 @@ if (!testImagePath) {
         console.log(`Test görseli: ${path.basename(testImagePath)}`);
 
         const uploadResult = await cloudinary.uploader.upload(testImagePath, {
-            folder: 'tulumbak/test',
+            folder: 'basak-pastanesi/test',
             resource_type: 'auto',
             transformation: [
                 { width: 800, height: 800, crop: 'limit', quality: 'auto' }

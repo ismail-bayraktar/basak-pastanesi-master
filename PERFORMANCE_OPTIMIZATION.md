@@ -51,7 +51,7 @@ Vercel KV (Redis) ekleyin - API response'larını cache'leyin:
 ```bash
 # Vercel KV ekle (dashboard'dan)
 # 1. Vercel Dashboard > Storage > Create Database > KV
-# 2. tulumbak-api projesine bağla
+# 2. basak-pastanesi-api projesine bağla
 ```
 
 **Ne Cache'leyelim**:
@@ -84,7 +84,7 @@ Sık kullanılan query'lerde index var mı?
 
 ```bash
 # API projesinde
-cd f:\NEXTJS\tulumbak-master\apps\api
+cd f:\donusum\basak-pastanesi-master\apps\api
 ```
 
 Product model'de index ekle:

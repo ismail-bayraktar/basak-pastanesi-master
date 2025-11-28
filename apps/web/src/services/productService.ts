@@ -49,3 +49,4 @@ export const productService = {
     return response.data.data?.products || [];
   },
 };
+

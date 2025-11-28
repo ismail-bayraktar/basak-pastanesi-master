@@ -87,12 +87,12 @@ async function uploadToCloudinary(localPath, folder = 'products') {
 
     if (isDryRun) {
       console.log(`  [DRY RUN] Would upload: ${localPath}`);
-      return `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/v1234567890/tulumbak/${folder}/migrated-image.jpg`;
+      return `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/v1234567890/basak-pastanesi/${folder}/migrated-image.jpg`;
     }
 
     // Upload to Cloudinary
     const result = await cloudinary.uploader.upload(fullPath, {
-      folder: `tulumbak/${folder}`,
+      folder: `basak-pastanesi/${folder}`,
       resource_type: 'auto',
       transformation: [
         { width: 2000, height: 2000, crop: 'limit', quality: 'auto' },

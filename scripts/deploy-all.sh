@@ -5,7 +5,7 @@
 
 set -e  # Exit on error
 
-echo "🚀 Tulumbak Full Stack Deployment"
+echo "🚀 Basak Pastanesi Full Stack Deployment"
 echo "=================================="
 echo ""
 
@@ -34,7 +34,7 @@ if [ ! -f .env.production ]; then
 fi
 
 vercel --prod --yes
-BACKEND_URL=$(vercel ls | grep tulumbak-backend | head -1 | awk '{print $2}')
+BACKEND_URL=$(vercel ls | grep basak-pastanesi-backend | head -1 | awk '{print $2}')
 echo -e "${GREEN}✅ Backend deployed: $BACKEND_URL${NC}"
 echo ""
 
@@ -46,7 +46,7 @@ cd ../frontend
 echo "VITE_API_URL=$BACKEND_URL" > .env.production
 
 vercel --prod --yes
-FRONTEND_URL=$(vercel ls | grep tulumbak-frontend | head -1 | awk '{print $2}')
+FRONTEND_URL=$(vercel ls | grep basak-pastanesi-frontend | head -1 | awk '{print $2}')
 echo -e "${GREEN}✅ Frontend deployed: $FRONTEND_URL${NC}"
 echo ""
 
@@ -58,7 +58,7 @@ cd ../admin
 echo "VITE_API_URL=$BACKEND_URL" > .env.production
 
 vercel --prod --yes
-ADMIN_URL=$(vercel ls | grep tulumbak-admin | head -1 | awk '{print $2}')
+ADMIN_URL=$(vercel ls | grep basak-pastanesi-admin | head -1 | awk '{print $2}')
 echo -e "${GREEN}✅ Admin deployed: $ADMIN_URL${NC}"
 echo ""
 

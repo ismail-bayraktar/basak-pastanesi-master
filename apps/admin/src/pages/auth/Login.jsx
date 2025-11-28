@@ -31,8 +31,14 @@ export default function Login({ setToken }) {
       })
 
       if (response.data.success) {
+        const token = response.data?.data?.token
+
+        if (!token) {
+          throw new Error("Sunucudan geçerli token alınamadı")
+        }
+
         // setToken is actually updateToken from App.jsx which handles localStorage sync
-        setToken(response.data.token)
+        setToken(token)
         toast({
           title: "Giriş başarılı!",
           description: "Yönlendiriliyorsunuz...",

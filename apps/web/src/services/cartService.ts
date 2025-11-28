@@ -54,23 +54,5 @@ export const cartService = {
       cartData: response.data.data?.cartData
     };
   },
-
-  /**
-   * Sync local cart with backend
-   */
-  async syncCart(cartData: CartItems): Promise<CartResponse> {
-    try {
-      const response = await apiClient.post<ApiResponse<{ cartData: CartItems }>>(
-        API_ENDPOINTS.CART.UPDATE,
-        { cartData }
-      );
-      return {
-        success: response.data.success,
-        message: response.data.message,
-        cartData: response.data.data?.cartData
-      };
-    } catch (error) {
-      return { success: false, message: 'Cart sync failed' };
-    }
-  },
 };
+

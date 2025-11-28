@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mongodb:
     image: mongo:latest
-    container_name: tulumbak-mongodb
+    container_name: basak-pastanesi-mongodb
     restart: always
     ports:
       - "27017:27017"
@@ -15,7 +15,7 @@ services:
 
   redis:
     image: redis:alpine
-    container_name: tulumbak-redis
+    container_name: basak-pastanesi-redis
     restart: always
     ports:
       - "6379:6379"

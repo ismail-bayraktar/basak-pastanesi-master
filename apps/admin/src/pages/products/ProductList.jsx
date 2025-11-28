@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
-import { Checkbox } from "@/components/ui/checkbox"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -105,7 +104,6 @@ export default function ProductList() {
     stock: 0,
     bestseller: false,
     category: "",
-    sizes: [],
   })
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 20
@@ -187,7 +185,6 @@ export default function ProductList() {
       stock: product.stock || 0,
       bestseller: product.bestseller || false,
       category: product.category || "",
-      sizes: product.sizes || [],
     })
     setEditDialogOpen(true)
   }
@@ -201,7 +198,6 @@ export default function ProductList() {
       formData.append("stock", editForm.stock)
       formData.append("bestseller", editForm.bestseller)
       formData.append("category", editForm.category)
-      formData.append("sizes", JSON.stringify(editForm.sizes))
 
       const response = await productAPI.update(formData)
       if (response.data.success) {
@@ -220,15 +216,6 @@ export default function ProductList() {
         description: error.response?.data?.message || "Ürün güncellenirken hata oluştu",
       })
     }
-  }
-
-  const toggleSize = (size) => {
-    setEditForm((prev) => ({
-      ...prev,
-      sizes: prev.sizes.includes(size)
-        ? prev.sizes.filter((s) => s !== size)
-        : [...prev.sizes, size],
-    }))
   }
 
   // Copy ID to clipboard
@@ -478,7 +465,6 @@ export default function ProductList() {
                       <TableHead>Kategori</TableHead>
                       <TableHead>Fiyat</TableHead>
                       <TableHead>Stok</TableHead>
-                      <TableHead>Gramaj</TableHead>
                       <TableHead>Durum</TableHead>
                       <TableHead className="text-right">İşlemler</TableHead>
                     </TableRow>
@@ -639,11 +625,6 @@ export default function ProductList() {
                           )}
                         </TableCell>
                         <TableCell>
-                          <div className="text-sm">
-                            {product.sizes?.map((size) => `${size}g`).join(", ")}
-                          </div>
-                        </TableCell>
-                        <TableCell>
                           <Badge variant="outline" className="bg-green-50">
                             {product.freshType === "taze" ? "Taze" : "Kuru"}
                           </Badge>
@@ -789,24 +770,6 @@ export default function ProductList() {
                   ))}
                 </SelectContent>
               </Select>
-            </div>
-
-            <div className="grid gap-2">
-              <Label>Gramajlar</Label>
-              <div className="flex flex-wrap gap-3">
-                {[100, 200, 250, 500, 750, 1000].map((size) => (
-                  <div key={size} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={`size-${size}`}
-                      checked={editForm.sizes.includes(size)}
-                      onCheckedChange={() => toggleSize(size)}
-                    />
-                    <Label htmlFor={`size-${size}`} className="font-normal cursor-pointer">
-                      {size}g
-                    </Label>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="flex items-center space-x-2">

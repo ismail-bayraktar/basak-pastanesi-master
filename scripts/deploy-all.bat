@@ -4,7 +4,7 @@ REM Tüm projeyi (backend, frontend, admin) Vercel'e deploy eder
 
 echo.
 echo ========================================
-echo   Tulumbak Full Stack Deployment
+echo   Basak Pastanesi Full Stack Deployment
 echo ========================================
 echo.
 

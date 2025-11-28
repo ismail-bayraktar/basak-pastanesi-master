@@ -1,6 +1,6 @@
 # Admin Dashboard - Sheet Pattern Standardı
 
-Bu doküman, Tulumbak Admin Dashboard'da ekleme ve düzenleme işlemleri için standart Sheet (Offcanvas) pattern'ini tanımlar.
+Bu doküman, Basak Pastanesi Admin Dashboard'da ekleme ve düzenleme işlemleri için standart Sheet (Offcanvas) pattern'ini tanımlar.
 
 ## Genel Bakış
 
@@ -642,4 +642,4 @@ Yeni bir Sheet component oluştururken:
 ---
 
 **Son Güncelleme**: 2025
-**Geliştirici**: Tulumbak Development Team
+**Geliştirici**: Basak Pastanesi Development Team

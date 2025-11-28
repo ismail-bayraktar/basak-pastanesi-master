@@ -8,35 +8,6 @@ export const productSchema = z.object({
     subCategory: z.string().optional(),
     stock: z.coerce.number().min(0).default(0),
     bestseller: z.enum(['true', 'false', 'true', 'false']).transform(val => val === 'true' || val === true).optional(),
-    sizes: z.union([z.string(), z.array(z.number())]).transform(val => {
-        if (Array.isArray(val)) return val;
-        try {
-            const parsed = JSON.parse(val);
-            return Array.isArray(parsed) ? parsed.map(Number) : [];
-        } catch {
-            return val.split(',').map(v => Number(v.trim())).filter(n => !isNaN(n));
-        }
-    }).optional(),
-    weights: z.union([z.string(), z.array(z.number())]).transform(val => {
-        if (!val) return [];
-        if (Array.isArray(val)) return val;
-        try {
-            const parsed = JSON.parse(val);
-            return Array.isArray(parsed) ? parsed.map(Number) : [];
-        } catch {
-            return val.split(',').map(v => Number(v.trim())).filter(n => !isNaN(n));
-        }
-    }).optional(),
-    personCounts: z.union([z.string(), z.array(z.string())]).transform(val => {
-        if (!val) return [];
-        if (Array.isArray(val)) return val;
-        try {
-            const parsed = JSON.parse(val);
-            return Array.isArray(parsed) ? parsed : [parsed];
-        } catch {
-            return val.split(',').map(v => v.trim()).filter(v => v);
-        }
-    }).optional(),
     labels: z.union([z.string(), z.array(z.string())]).transform(val => {
         if (!val) return [];
         if (Array.isArray(val)) return val;

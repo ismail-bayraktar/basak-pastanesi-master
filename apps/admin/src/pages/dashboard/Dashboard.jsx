@@ -118,7 +118,7 @@ export default function Dashboard() {
                 <BreadcrumbList>
                   <BreadcrumbItem className="hidden md:block">
                     <BreadcrumbLink href="#">
-                      Tulumbak Admin
+                      Basak Pastanesi Admin
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator className="hidden md:block" />

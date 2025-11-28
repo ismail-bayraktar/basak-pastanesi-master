@@ -76,21 +76,12 @@ class ProductService {
             data.name
         );
 
-        const sizePrices = data.sizes?.map(size => ({
-            size,
-            price: data.basePrice * size
-        })) || [];
-
         const productData = {
             ...data,
             category: typeof data.category === 'object' && data.category._id ? data.category._id : data.category,
             image: imagesUrl,
             date: Date.now(),
-            sizePrices,
-            sizes: data.sizes || [],
-            weights: data.weights || [],
             labels: data.labels || [],
-            personCounts: data.personCounts || [],
             keywords: data.keywords || []
         };
 
@@ -133,13 +124,6 @@ class ProductService {
             ...data,
             category: typeof data.category === 'object' && data.category._id ? data.category._id : data.category,
         };
-
-        if (data.sizes && data.sizes.length > 0) {
-            updatePayload.sizePrices = data.sizes.map(size => ({
-                size,
-                price: Number(data.basePrice) * size
-            }));
-        }
 
         if (imagesUrl.length > 0) {
             updatePayload.image = imagesUrl;
@@ -189,16 +173,12 @@ class ProductService {
 
         const products = await productModel
             .find(query)
-            .select('name description basePrice image category subCategory sizes sizePrices bestseller date stock slug sku active')
+            .select('name description basePrice image category subCategory bestseller date stock slug sku active')
             .populate('category', 'name slug active')
             .sort({ date: -1 })
             .lean();
 
-        // Ensure sizePrices is always an array
-        return products.map(product => ({
-            ...product,
-            sizePrices: product.sizePrices || []
-        }));
+        return products;
     }
 
     /**
@@ -316,24 +296,27 @@ class ProductService {
      * Get price range
      */
     async getPriceRange() {
-        const products = await productModel.find({ active: true }).select('basePrice sizePrices');
+        const products = await productModel.find({ active: true }).select('basePrice');
 
         if (products.length === 0) {
-            return { minPrice: 0, maxPrice: 10000 };
+            return { minPrice: 0, maxPrice: 1000 };
         }
 
-        const allPrices = [];
-        products.forEach(product => {
-            allPrices.push(product.basePrice);
-            if (product.sizePrices && product.sizePrices.length > 0) {
-                product.sizePrices.forEach(sp => allPrices.push(sp.price));
-            }
-        });
+        const prices = products
+            .map(product => Number(product.basePrice))
+            .filter(price => Number.isFinite(price) && price >= 0);
 
-        const minPrice = Math.floor(Math.min(...allPrices) / 100);
-        const maxPrice = Math.ceil(Math.max(...allPrices) / 100);
+        if (prices.length === 0) {
+            return { minPrice: 0, maxPrice: 1000 };
+        }
 
-        return { minPrice, maxPrice };
+        const minPrice = Math.floor(Math.min(...prices));
+        const maxPrice = Math.ceil(Math.max(...prices));
+
+        return {
+            minPrice,
+            maxPrice: Math.max(minPrice, maxPrice)
+        };
     }
 }
 

@@ -20,7 +20,7 @@ const sampleSliders = [
         overlayOpacity: 30,
         textColor: 'auto',
         altText: 'Taze baklava çeşitleri',
-        seoTitle: 'El Yapımı Taze Baklavalar - Tulumbak',
+        seoTitle: 'El Yapımı Taze Baklavalar - Basak Pastanesi',
         order: 0,
         isActive: true
     },
@@ -36,7 +36,7 @@ const sampleSliders = [
         overlayOpacity: 40,
         textColor: 'light',
         altText: 'Özel gün baklava paketleri',
-        seoTitle: 'Özel Gün Baklava Paketleri - Tulumbak',
+        seoTitle: 'Özel Gün Baklava Paketleri - Basak Pastanesi',
         order: 1,
         isActive: true
     },
@@ -52,7 +52,7 @@ const sampleSliders = [
         overlayOpacity: 20,
         textColor: 'dark',
         altText: 'Aynı gün teslimat servisi',
-        seoTitle: 'Aynı Gün Teslimat - Tulumbak',
+        seoTitle: 'Aynı Gün Teslimat - Basak Pastanesi',
         order: 2,
         isActive: true
     }

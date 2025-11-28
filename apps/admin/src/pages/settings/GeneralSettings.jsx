@@ -202,7 +202,7 @@ export default function GeneralSettings() {
                 <BreadcrumbList>
                   <BreadcrumbItem className="hidden md:block">
                     <BreadcrumbLink href="#">
-                      Tulumbak Admin
+                      Basak Pastanesi Admin
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator className="hidden md:block" />
@@ -275,7 +275,7 @@ export default function GeneralSettings() {
                         onChange={(e) =>
                           setGeneralSettings({ ...generalSettings, siteName: e.target.value })
                         }
-                        placeholder="Tulumbak E-Ticaret"
+                        placeholder="Basak Pastanesi E-Ticaret"
                       />
                     </div>
                     <div className="space-y-2">
@@ -287,7 +287,7 @@ export default function GeneralSettings() {
                         onChange={(e) =>
                           setGeneralSettings({ ...generalSettings, contactEmail: e.target.value })
                         }
-                        placeholder="info@tulumbak.com"
+                        placeholder="info@basakpastanesi.com"
                       />
                     </div>
                   </div>
@@ -410,7 +410,7 @@ export default function GeneralSettings() {
                       onChange={(e) =>
                         setSeoSettings({ ...seoSettings, metaTitle: e.target.value })
                       }
-                      placeholder="Tulumbak - Online Alışveriş"
+                      placeholder="Basak Pastanesi - Online Alışveriş"
                     />
                   </div>
 
@@ -607,7 +607,7 @@ export default function GeneralSettings() {
                         onChange={(e) =>
                           setSocialSettings({ ...socialSettings, facebook: e.target.value })
                         }
-                        placeholder="https://facebook.com/tulumbak"
+                        placeholder="https://facebook.com/basakpastanesi"
                       />
                     </div>
                     <div className="space-y-2">
@@ -618,7 +618,7 @@ export default function GeneralSettings() {
                         onChange={(e) =>
                           setSocialSettings({ ...socialSettings, instagram: e.target.value })
                         }
-                        placeholder="https://instagram.com/tulumbak"
+                        placeholder="https://instagram.com/basakpastanesi"
                       />
                     </div>
                   </div>
@@ -632,7 +632,7 @@ export default function GeneralSettings() {
                         onChange={(e) =>
                           setSocialSettings({ ...socialSettings, twitter: e.target.value })
                         }
-                        placeholder="https://twitter.com/tulumbak"
+                        placeholder="https://twitter.com/basakpastanesi"
                       />
                     </div>
                     <div className="space-y-2">
@@ -643,7 +643,7 @@ export default function GeneralSettings() {
                         onChange={(e) =>
                           setSocialSettings({ ...socialSettings, youtube: e.target.value })
                         }
-                        placeholder="https://youtube.com/tulumbak"
+                        placeholder="https://youtube.com/basakpastanesi"
                       />
                     </div>
                   </div>
@@ -657,7 +657,7 @@ export default function GeneralSettings() {
                         onChange={(e) =>
                           setSocialSettings({ ...socialSettings, linkedin: e.target.value })
                         }
-                        placeholder="https://linkedin.com/company/tulumbak"
+                        placeholder="https://linkedin.com/company/basakpastanesi"
                       />
                     </div>
                     <div className="space-y-2">

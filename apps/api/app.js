@@ -33,6 +33,7 @@ import cacheManagementRouter from "./routes/CacheManagementRoute.js";
 import outgoingWebhookRouter from "./routes/OutgoingWebhookRoute.js";
 import emailRouter from "./routes/emailRoute.js";
 import notificationRouter from "./routes/NotificationRoute.js";
+import reviewRouter from "./routes/ReviewRoute.js";
 import RateLimiterService from "./services/RateLimiter.js";
 import OutgoingWebhookService from "./services/OutgoingWebhookService.js";
 import logger, { logInfo } from "./utils/logger.js";
@@ -44,6 +45,21 @@ import { existsSync, mkdirSync } from 'fs';
 
 // APP CONFIG
 const app = express();
+
+// Manually register packages for Vercel environment to ensure they are bundled
+// This is a workaround for Vercel's monorepo dependency resolution issue
+if (process.env.VERCEL) {
+    try {
+        // Explicitly reference critical packages
+        const _mongoose = await import('mongoose');
+        const _express = await import('express');
+        const _cors = await import('cors');
+        const _helmet = await import('helmet');
+        const _dotenv = await import('dotenv');
+    } catch (e) {
+        // Just for bundling, ignore runtime errors
+    }
+}
 
 // Initialize Sentry (before other middleware)
 initSentry();
@@ -59,7 +75,7 @@ try {
     console.warn('Unable to create logs directory (serverless environment):', error.message);
 }
 
-logInfo('Initializing Tulumbak Backend App', {
+logInfo('Initializing Basak Pastanesi Backend App', {
     environment: process.env.NODE_ENV || 'development'
 });
 
@@ -170,7 +186,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 // CORS Configuration
 const allowedOrigins = process.env.CORS_ORIGINS
     ? process.env.CORS_ORIGINS.split(',').map(origin => origin.trim())
-    : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'http://localhost:4001'];
+    : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'http://localhost:3001', 'http://localhost:4001'];
 
 app.use(cors({
     origin: (origin, callback) => {
@@ -198,6 +214,11 @@ if (shouldUseRateLimiter) {
         // Exempt SSE endpoints from rate limiting (long-running connections)
         if (req.path.startsWith('/notifications/stream')) {
             logger.debug('SSE endpoint exempted from rate limiting', { path: req.path });
+            return next();
+        }
+        // Exempt slider list endpoint (public, frequently accessed, cached on frontend)
+        if (req.path === '/api/slider/list' && req.method === 'GET') {
+            logger.debug('Slider list endpoint exempted from rate limiting', { path: req.path });
             return next();
         }
         // Apply rate limiting to all other endpoints
@@ -273,6 +294,7 @@ app.use('/api/admin/courier-integration', courierIntegrationRouter);
 app.use('/api/dlq', deadLetterQueueRouter);
 app.use('/api/email', emailRouter);
 app.use('/api/notifications', notificationRouter);
+app.use('/api/reviews', reviewRouter);
 
 // Swagger Documentation
 swaggerDocs(app);

@@ -1,6 +1,6 @@
 @echo off
 echo ========================================================
-echo   TULUMBAK HIZLI DEPLOYMENT ARACI
+echo   BAŞAK PASTANESİ HIZLI DEPLOYMENT ARACI
 echo ========================================================
 echo.
 echo 1. Kodlar hazirlaniyor (git add)...

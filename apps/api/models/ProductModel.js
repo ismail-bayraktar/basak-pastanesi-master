@@ -14,21 +14,24 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     subCategory: { type: String },
-    sizes: { type: Array, required: true }, // Gramaj: 250, 500, 1000, 2000
+    sizes: { type: [Number], default: [] },
     weights: { type: [Number], default: [] },
     freshType: { type: String, enum: ['taze', 'kuru'], default: 'taze' },
     packaging: { type: String, enum: ['standart', 'özel'], default: 'standart' },
     giftWrap: { type: Boolean, default: false },
     labels: { type: [String], default: [] },
-    personCounts: { type: Array, required: true }, // Kişi sayısı: 2-3, 5-6, 8-10, 12+
+    personCounts: { type: [String], default: [] },
     bestseller: { type: Boolean },
     date: { type: Number, required: true },
-    sizePrices: [{ size: Number, price: Number }], // Gramaja özel fiyat
+    sizePrices: [{ size: Number, price: Number }],
     stock: { type: Number, default: 0 },
     allergens: { type: String }, // Alerjen bilgileri
     ingredients: { type: String }, // Malzemeler
     shelfLife: { type: String }, // Raf ömrü/tazeleme bilgisi
     storageInfo: { type: String }, // Saklama koşulları
+    // Review fields
+    averageRating: { type: Number, default: 0, min: 0, max: 5 },
+    reviewCount: { type: Number, default: 0 },
 
     // Product Identification Fields
     sku: {
@@ -110,7 +113,7 @@ productSchema.pre('save', async function (next) {
             const categoryCode = category ? category.name.substring(0, 3).toUpperCase() : 'PRD';
 
             // Get first size (gramaj) for SKU
-            const size = this.sizes && this.sizes.length > 0 ? this.sizes[0] : '000';
+            const size = 'STD';
 
             // Find the last product with similar SKU pattern to get next counter
             const lastProduct = await mongoose.model('product')
@@ -185,7 +188,7 @@ productSchema.pre('save', async function (next) {
 
     // Auto-generate metaTitle if not provided
     if ((this.isModified('name') || this.isModified('category')) && !this.metaTitle) {
-        let title = `${this.name} | ${this.category} - Tulumbak`;
+        let title = `${this.name} | ${this.category} - Basak Pastanesi`;
         if (title.length > 60) {
             title = title.substring(0, 57) + '...';
         }

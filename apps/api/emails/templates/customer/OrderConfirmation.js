@@ -34,8 +34,8 @@ export const OrderConfirmation = ({
   // Branding (from EmailSettings)
   brandColor = '#d4af37',
   logoUrl,
-  storeName = 'Tulumbak İzmir Baklava',
-  storeEmail = 'info@tulumbak.com',
+  storeName = 'Basak Pastanesi İzmir Baklava',
+  storeEmail = 'info@basakpastanesi.com',
   storePhone = '0232 XXX XXXX',
 }) => {
   return (
@@ -135,7 +135,7 @@ export const OrderConfirmation = ({
       {/* CTA Button */}
       <Section style={{ textAlign: 'center', margin: '32px 0' }}>
         <Button
-          href={`https://tulumbak.com/orders/${orderId}`}
+          href={`https://basakpastanesi.com/orders/${orderId}`}
           brandColor={brandColor}
         >
           Siparişimi Takip Et

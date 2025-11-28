@@ -181,7 +181,7 @@ export default function DesignTab({ settings, updateSetting, onSave }) {
               <div className="space-y-2">
                 <Input
                   type="url"
-                  placeholder="https://tulumbak.com/logo.png"
+                  placeholder="https://basakpastanesi.com/logo.png"
                   value={settings?.design?.logoUrl || ""}
                   onChange={(e) => updateSetting("design.logoUrl", e.target.value)}
                 />
@@ -298,7 +298,7 @@ export default function DesignTab({ settings, updateSetting, onSave }) {
             <Input
               id="design-store-name"
               type="text"
-              placeholder="Tulumbak İzmir Baklava"
+              placeholder="Basak Pastanesi İzmir Baklava"
               value={settings?.design?.storeName || ""}
               onChange={(e) => updateSetting("design.storeName", e.target.value)}
             />
@@ -310,7 +310,7 @@ export default function DesignTab({ settings, updateSetting, onSave }) {
               <Input
                 id="design-store-email"
                 type="email"
-                placeholder="info@tulumbak.com"
+                placeholder="info@basakpastanesi.com"
                 value={settings?.design?.storeEmail || ""}
                 onChange={(e) => updateSetting("design.storeEmail", e.target.value)}
               />
@@ -354,7 +354,7 @@ export default function DesignTab({ settings, updateSetting, onSave }) {
             <Input
               id="design-privacy-url"
               type="url"
-              placeholder="https://tulumbak.com/privacy"
+              placeholder="https://basakpastanesi.com/privacy"
               value={settings?.design?.privacyPolicyUrl || ""}
               onChange={(e) => updateSetting("design.privacyPolicyUrl", e.target.value)}
             />
@@ -365,7 +365,7 @@ export default function DesignTab({ settings, updateSetting, onSave }) {
             <Input
               id="design-email-prefs-url"
               type="url"
-              placeholder="https://tulumbak.com/email-preferences"
+              placeholder="https://basakpastanesi.com/email-preferences"
               value={settings?.design?.emailPreferencesUrl || ""}
               onChange={(e) => updateSetting("design.emailPreferencesUrl", e.target.value)}
             />
@@ -379,7 +379,7 @@ export default function DesignTab({ settings, updateSetting, onSave }) {
             <Input
               id="design-unsubscribe-url"
               type="url"
-              placeholder="https://tulumbak.com/unsubscribe"
+              placeholder="https://basakpastanesi.com/unsubscribe"
               value={settings?.design?.unsubscribeUrl || ""}
               onChange={(e) => updateSetting("design.unsubscribeUrl", e.target.value)}
             />

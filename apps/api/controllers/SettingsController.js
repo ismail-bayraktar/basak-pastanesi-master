@@ -148,9 +148,9 @@ const testEmail = async (req, res) => {
     const { default: emailService } = await import("../services/EmailService.js");
     
     const result = await emailService.sendEmail({
-      from: `"Tulumbak Baklava" <${process.env.SMTP_USER}>`,
+      from: `"Basak Pastanesi Baklava" <${process.env.SMTP_USER}>`,
       to: email,
-      subject: subject || 'Test Email - Tulumbak',
+      subject: subject || 'Test Email - Basak Pastanesi',
       html: message || `
         <div style="font-family: Arial, sans-serif; padding: 20px;">
           <h2>Test Email</h2>

@@ -61,19 +61,5 @@ export const orderService = {
       bankInfo: response.data.data?.bankInfo
     };
   },
-
-  /**
-   * Update PayTR order status
-   */
-  async updatePaytrOrder(orderId: string, paymentStatus: boolean): Promise<OrderResponse> {
-    const response = await apiClient.post<ApiResponse<{ order: Order }>>(
-      API_ENDPOINTS.ORDERS.UPDATE_PAYTR,
-      { orderId, paymentStatus }
-    );
-    return {
-      success: response.data.success,
-      message: response.data.message,
-      order: response.data.data?.order
-    };
-  },
 };
+

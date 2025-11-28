@@ -12,7 +12,7 @@ import { mediaAPI } from '@/lib/api'
  * bypassing the backend server for better performance and reliability.
  *
  * @param {Object} props
- * @param {string} props.folder - Cloudinary folder (default: 'tulumbak/general')
+ * @param {string} props.folder - Cloudinary folder (default: 'basak-pastanesi/general')
  * @param {Function} props.onUploadSuccess - Callback when upload succeeds
  * @param {Function} props.onUploadError - Callback when upload fails
  * @param {boolean} props.multiple - Allow multiple file selection

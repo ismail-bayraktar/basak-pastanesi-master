@@ -208,7 +208,7 @@ class OutgoingWebhookService {
                 data: payload,
                 metadata: {
                     ...metadata,
-                    platform: subscription.platform || 'tulumbak',
+                    platform: subscription.platform || 'basak-pastanesi',
                     correlationId: metadata.correlationId || crypto.randomUUID()
                 }
             };
@@ -229,7 +229,7 @@ class OutgoingWebhookService {
                 'X-Webhook-Event': eventType,
                 'X-Webhook-Id': idempotencyKey,
                 'X-Webhook-Delivery-Attempt': '1',
-                'User-Agent': `Tulumbak-Webhooks/1.0 (${this.serverInstance})`
+                'User-Agent': `Basak Pastanesi-Webhooks/1.0 (${this.serverInstance})`
             };
 
             // Add custom headers from subscription

@@ -1,6 +1,6 @@
 @echo off
 echo ========================================
-echo Tulumbak Monorepo - 3 Proje Deployment
+echo Basak Pastanesi Monorepo - 3 Proje Deployment
 echo ========================================
 echo.
 
@@ -17,9 +17,9 @@ echo.
 
 echo [3/4] Deployment bilgileri:
 echo.
-echo tulumbak-web:   Next.js (Ana site)
-echo tulumbak-api:   Express API (Serverless)
-echo tulumbak-admin: Vite SPA (Admin panel)
+echo basak-pastanesi-web:   Next.js (Ana site)
+echo basak-pastanesi-api:   Express API (Serverless)
+echo basak-pastanesi-admin: Vite SPA (Admin panel)
 echo.
 
 echo ========================================
@@ -29,16 +29,16 @@ echo.
 echo 1. https://vercel.com/dashboard adresine git
 echo 2. Her proje icin Environment Variables ekle:
 echo.
-echo tulumbak-api:
+echo basak-pastanesi-api:
 echo   - MONGODB_URI = [MongoDB connection string]
 echo   - JWT_SECRET = [secret]
 echo   - CLOUDINARY credentials
 echo.
-echo tulumbak-web:
-echo   - NEXT_PUBLIC_BACKEND_URL = https://tulumbak-api.vercel.app
+echo basak-pastanesi-web:
+echo   - NEXT_PUBLIC_BACKEND_URL = https://basak-pastanesi-api.vercel.app
 echo.
-echo tulumbak-admin:
-echo   - VITE_API_URL = https://tulumbak-api.vercel.app
+echo basak-pastanesi-admin:
+echo   - VITE_API_URL = https://basak-pastanesi-api.vercel.app
 echo.
 echo 3. GitHub push sonrasi otomatik deploy olacak
 echo.

@@ -27,7 +27,7 @@ const webhookConfigSchema = new mongoose.Schema({
     },
     webhookUrl: {
         type: String,
-        default: process.env.WEBHOOK_BASE_URL || 'https://api.tulumbak.com/api/webhook/courier'
+        default: process.env.WEBHOOK_BASE_URL || 'https://api.basakpastanesi.com/api/webhook/courier'
     },
     enabled: {
         type: Boolean,

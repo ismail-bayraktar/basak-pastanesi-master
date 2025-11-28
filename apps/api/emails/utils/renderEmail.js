@@ -32,7 +32,7 @@ export function generateEmailSubject(type, data) {
     orderCancelled: `Siparişiniz İptal Edildi - #${data.orderId}`,
   };
 
-  return subjects[type] || `Tulumbak - Bildirim`;
+  return subjects[type] || `Basak Pastanesi - Bildirim`;
 }
 
 export default { renderEmailToHTML, generateEmailSubject };

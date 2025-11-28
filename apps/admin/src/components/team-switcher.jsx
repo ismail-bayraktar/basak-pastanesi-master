@@ -18,7 +18,7 @@ export function TeamSwitcher({ teams }) {
           className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground cursor-default h-14"
         >
           <div className="flex size-12 items-center justify-center rounded-lg overflow-hidden">
-            <img src={logo} alt="Tulumbak Logo" className="w-full h-full object-contain" />
+            <img src={logo} alt="Basak Pastanesi Logo" className="w-full h-full object-contain" />
           </div>
           <div className="grid flex-1 text-left text-sm leading-tight">
             <span className="truncate font-semibold">

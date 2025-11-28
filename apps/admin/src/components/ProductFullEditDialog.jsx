@@ -12,7 +12,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
-import { Checkbox } from "@/components/ui/checkbox"
 import {
   Select,
   SelectContent,
@@ -49,13 +48,10 @@ export default function ProductFullEditDialog({ open, onOpenChange, product, onS
     subCategory: "",
     stock: 0,
     bestseller: false,
-    sizes: [],
-    weights: [],
     freshType: "taze",
     packaging: "standart",
     giftWrap: false,
     labels: [],
-    personCounts: [],
     allergens: "",
     ingredients: "",
     shelfLife: "",
@@ -104,13 +100,10 @@ export default function ProductFullEditDialog({ open, onOpenChange, product, onS
         subCategory: product.subCategory || "",
         stock: product.stock || 0,
         bestseller: product.bestseller || false,
-        sizes: product.sizes || [],
-        weights: product.weights || [],
         freshType: product.freshType || "taze",
         packaging: product.packaging || "standart",
         giftWrap: product.giftWrap || false,
         labels: product.labels || [],
-        personCounts: product.personCounts || [],
         allergens: product.allergens || "",
         ingredients: product.ingredients || "",
         shelfLife: product.shelfLife || "",
@@ -184,24 +177,6 @@ export default function ProductFullEditDialog({ open, onOpenChange, product, onS
     setMediaUrls((prev) => ({ ...prev, [imageKey]: null }))
   }
 
-  const toggleSize = (size) => {
-    setFormData((prev) => ({
-      ...prev,
-      sizes: prev.sizes.includes(size)
-        ? prev.sizes.filter((s) => s !== size)
-        : [...prev.sizes, size],
-    }))
-  }
-
-  const togglePersonCount = (count) => {
-    setFormData((prev) => ({
-      ...prev,
-      personCounts: prev.personCounts.includes(count)
-        ? prev.personCounts.filter((c) => c !== count)
-        : [...prev.personCounts, count],
-    }))
-  }
-
   const handleSubmit = async () => {
     // Validation
     if (!formData.name || !formData.description || !formData.category) {
@@ -234,10 +209,7 @@ export default function ProductFullEditDialog({ open, onOpenChange, product, onS
       submitData.append("giftWrap", formData.giftWrap)
 
       // Arrays
-      submitData.append("sizes", JSON.stringify(formData.sizes))
-      submitData.append("weights", JSON.stringify(formData.weights))
       submitData.append("labels", JSON.stringify(formData.labels))
-      submitData.append("personCounts", JSON.stringify(formData.personCounts))
 
       // Additional info
       submitData.append("allergens", formData.allergens)
@@ -429,42 +401,6 @@ export default function ProductFullEditDialog({ open, onOpenChange, product, onS
           {/* Options */}
           <div className="grid gap-4">
             <h3 className="font-semibold">Seçenekler</h3>
-
-            <div className="grid gap-2">
-              <Label>Gramajlar</Label>
-              <div className="flex flex-wrap gap-3">
-                {[100, 200, 250, 500, 750, 1000, 2000].map((size) => (
-                  <div key={size} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={`size-${size}`}
-                      checked={formData.sizes.includes(size)}
-                      onCheckedChange={() => toggleSize(size)}
-                    />
-                    <Label htmlFor={`size-${size}`} className="font-normal cursor-pointer">
-                      {size}g
-                    </Label>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid gap-2">
-              <Label>Kişi Sayısı</Label>
-              <div className="flex flex-wrap gap-3">
-                {["2-3", "5-6", "8-10", "12+"].map((count) => (
-                  <div key={count} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={`person-${count}`}
-                      checked={formData.personCounts.includes(count)}
-                      onCheckedChange={() => togglePersonCount(count)}
-                    />
-                    <Label htmlFor={`person-${count}`} className="font-normal cursor-pointer">
-                      {count} kişi
-                    </Label>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="grid gap-2">

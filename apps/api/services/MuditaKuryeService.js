@@ -65,7 +65,7 @@ class MuditaKuryeService {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
-                    'User-Agent': 'Tulumbak/1.0'
+                    'User-Agent': 'Basak Pastanesi/1.0'
                 }
             });
 
@@ -186,54 +186,54 @@ class MuditaKuryeService {
     }
 
     /**
-     * Transform Tulumbak order to MuditaKurye format
+     * Transform Basak Pastanesi order to MuditaKurye format
      */
-    transformOrderData(tulumbakOrder) {
+    transformOrderData(order) {
         // Handle multiple address formats
         // Format 1: address.address (nested field)
         // Format 2: address.street + address.city (separate fields)
-        let deliveryAddress = tulumbakOrder.address?.address || '';
+        let deliveryAddress = order.address?.address || '';
 
         // If no address.address, try building from street + city
-        if (!deliveryAddress && tulumbakOrder.address) {
+        if (!deliveryAddress && order.address) {
             const parts = [
-                tulumbakOrder.address.street,
-                tulumbakOrder.address.district,
-                tulumbakOrder.address.city
+                order.address.street,
+                order.address.district,
+                order.address.city
             ].filter(Boolean);
             deliveryAddress = parts.join(', ');
         }
 
         const transformed = {
-            orderId: tulumbakOrder._id.toString(),
-            restaurantId: this.config.restaurantId || tulumbakOrder.muditaRestaurantId || process.env.MUDITA_RESTAURANT_ID,
-            customerName: tulumbakOrder.address?.name || tulumbakOrder.address?.firstName || tulumbakOrder.address?.lastName || 'Müşteri',
-            customerPhone: tulumbakOrder.address?.phone || tulumbakOrder.phone,
-            customerEmail: tulumbakOrder.address?.email || null,
+            orderId: order._id.toString(),
+            restaurantId: this.config.restaurantId || order.muditaRestaurantId || process.env.MUDITA_RESTAURANT_ID,
+            customerName: order.address?.name || order.address?.firstName || order.address?.lastName || 'Müşteri',
+            customerPhone: order.address?.phone || order.phone,
+            customerEmail: order.address?.email || null,
             deliveryAddress: deliveryAddress,
-            deliveryLatitude: tulumbakOrder.address?.latitude || tulumbakOrder.address?.coordinates?.latitude || null,
-            deliveryLongitude: tulumbakOrder.address?.longitude || tulumbakOrder.address?.coordinates?.longitude || null,
+            deliveryLatitude: order.address?.latitude || order.address?.coordinates?.latitude || null,
+            deliveryLongitude: order.address?.longitude || order.address?.coordinates?.longitude || null,
 
             // Payment information
-            paymentMethod: this.mapPaymentMethod(tulumbakOrder.paymentMethod),
-            paymentCaptured: tulumbakOrder.payment === true,
+            paymentMethod: this.mapPaymentMethod(order.paymentMethod),
+            paymentCaptured: order.payment === true,
 
             // Amount details
-            subtotal: tulumbakOrder.amount - (tulumbakOrder.delivery?.fee || 0) - (tulumbakOrder.codFee || 0),
-            deliveryFee: tulumbakOrder.delivery?.fee || 0,
-            serviceFee: tulumbakOrder.codFee || 0,
+            subtotal: order.amount - (order.delivery?.fee || 0) - (order.codFee || 0),
+            deliveryFee: order.delivery?.fee || 0,
+            serviceFee: order.codFee || 0,
             discount: 0, // TODO: Add discount field if available
             taxAmount: 0, // TODO: Add tax calculation if needed
-            total: tulumbakOrder.amount,
+            total: order.amount,
             currency: 'TRY',
 
             // Additional fields
-            scheduledDeliveryTime: tulumbakOrder.scheduledDeliveryTime ?
-                new Date(tulumbakOrder.scheduledDeliveryTime).toISOString() : null,
-            notes: tulumbakOrder.giftNote || '',
+            scheduledDeliveryTime: order.scheduledDeliveryTime ?
+                new Date(order.scheduledDeliveryTime).toISOString() : null,
+            notes: order.giftNote || '',
 
             // Order items
-            items: tulumbakOrder.items?.map((item, index) => ({
+            items: order.items?.map((item, index) => ({
                 productCode: item.productId || `ITEM-${index + 1}`,
                 productName: item.name || 'Ürün',
                 quantity: item.quantity || 1,
@@ -439,7 +439,7 @@ class MuditaKuryeService {
      */
     async updateOrderStatus(externalOrderId, status, additionalData = {}) {
         try {
-            // Map MuditaKurye status to Tulumbak status
+            // Map MuditaKurye status to Basak Pastanesi status
             const statusMapping = this.config.statusMapping || new Map([
                 ['VALIDATED', 'Siparişiniz Alındı'],
                 ['ASSIGNED', 'Kuryeye Atandı'],
@@ -449,11 +449,11 @@ class MuditaKuryeService {
                 ['CANCELED', 'İptal Edildi']
             ]);
 
-            const tulumbakStatus = statusMapping.get(status) || status;
+            const orderStatus = statusMapping.get(status) || status;
 
             return {
                 success: true,
-                tulumbakStatus,
+                orderStatus,
                 originalStatus: status,
                 ...additionalData
             };

@@ -45,7 +45,7 @@ const emailTemplateSchema = new mongoose.Schema(
       primaryColor: { type: String, default: '#d4af37' }, // Gold
       secondaryColor: { type: String, default: '#333333' },
       headerImage: { type: String },
-      footerText: { type: String, default: 'Tulumbak İzmir Baklava' },
+      footerText: { type: String, default: 'Basak Pastanesi İzmir Baklava' },
     },
 
     // Status

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ],
+  "installCommand": "cd ../.. && corepack enable && corepack use pnpm@8.15.8 && pnpm install --frozen-lockfile --prod=false",
+  "buildCommand": "cd ../.. && pnpm turbo run build --filter=@basak-pastanesi/web...",
+  "ignoreCommand": "npx turbo-ignore"
+}

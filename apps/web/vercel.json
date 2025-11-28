@@ -1,27 +1,21 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "nextjs",
-  "cleanUrls": true,
+  "name": "basak-pastanesi-web",
+  "framework": "vite",
+  "installCommand": "pnpm install --prod=false",
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist",
+  "ignoreCommand": "npx turbo-ignore",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/assets/(.*)",
       "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
-  ],
-  "installCommand": "cd ../.. && corepack enable && corepack use pnpm@8.15.8 && pnpm install --frozen-lockfile --prod=false",
-  "buildCommand": "cd ../.. && pnpm turbo run build --filter=@tulumbak/web...",
-  "ignoreCommand": "npx turbo-ignore"
+  ]
 }
+

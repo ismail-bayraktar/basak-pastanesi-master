@@ -1,9 +1,3 @@
-export interface SizePrice {
-  size: number;  // Gramaj: 250, 500, 1000, 2000
-  price: number; // Fiyat (TL cinsinden, kuruş değil)
-  _id?: string;
-}
-
 // Category reference from backend
 export interface ProductCategory {
   _id: string;
@@ -21,13 +15,13 @@ export interface Product {
   category: ProductCategory;   // Kategori objesi (populated from backend)
   subCategory?: string;
 
-  // Gramaj ve Ağırlıklar
-  sizes: number[];           // Gramaj seçenekleri: [250, 500, 1000, 2000]
+  // Gramaj ve Ağırlıklar (opsiyonel - varyasyon kaldırıldı)
+  sizes?: number[];
   weights?: number[];
-  sizePrices: SizePrice[];   // Gramaja özel fiyatlar
+  sizePrices?: Array<{ size: number; price: number }>;
 
-  // Kişi Sayısı
-  personCounts: string[];    // Örn: ["2-3", "5-6", "8-10", "12+"]
+  // Kişi Sayısı (opsiyonel)
+  personCounts?: string[];
 
   // Ürün Özellikleri
   freshType: 'taze' | 'kuru';              // Taze veya kuru

@@ -92,7 +92,7 @@ export const createWebhookConfig = async (req, res) => {
             platform: platform.toLowerCase(),
             name,
             secretKey, // Will be encrypted by pre-save hook
-            webhookUrl: webhookUrl || process.env.WEBHOOK_BASE_URL || 'https://api.tulumbak.com/api/webhook/courier',
+            webhookUrl: webhookUrl || process.env.WEBHOOK_BASE_URL || 'https://api.basakpastanesi.com/api/webhook/courier',
             enabled: enabled !== undefined ? enabled : true,
             events: events || [],
             rateLimit: rateLimit || { perMinute: 100, perHour: 1000 },

@@ -282,7 +282,7 @@ class EmailService {
 
       // Prepare mail options
       const mailOptions = {
-        from: options.from || `"Tulumbak Baklava" <${process.env.SMTP_USER}>`,
+        from: options.from || `"Basak Pastanesi Baklava" <${process.env.SMTP_USER}>`,
         to,
         subject: options.subject || subject,
         html,
@@ -372,7 +372,7 @@ class EmailService {
    */
   async sendOrderConfirmation(orderData, to) {
     const mailOptions = {
-      from: `"Tulumbak Baklava" <${process.env.SMTP_USER}>`,
+      from: `"Basak Pastanesi Baklava" <${process.env.SMTP_USER}>`,
       to,
       subject: 'Siparişiniz Alındı - #' + orderData.orderId,
       html: this.getOrderConfirmationTemplate(orderData),
@@ -390,7 +390,7 @@ class EmailService {
    */
   async sendOrderStatusUpdate(orderData, status, to) {
     const mailOptions = {
-      from: `"Tulumbak Baklava" <${process.env.SMTP_USER}>`,
+      from: `"Basak Pastanesi Baklava" <${process.env.SMTP_USER}>`,
       to,
       subject: `Sipariş Durumunuz Güncellendi - #${orderData.orderId}`,
       html: this.getOrderStatusUpdateTemplate(orderData, status),
@@ -407,7 +407,7 @@ class EmailService {
    */
   async sendCourierAssignment(orderData, to) {
     const mailOptions = {
-      from: `"Tulumbak Baklava" <${process.env.SMTP_USER}>`,
+      from: `"Basak Pastanesi Baklava" <${process.env.SMTP_USER}>`,
       to,
       subject: `Siparişiniz Yola Çıktı - #${orderData.orderId}`,
       html: this.getCourierAssignmentTemplate(orderData),
@@ -424,9 +424,9 @@ class EmailService {
    */
   async sendDeliveryCompleted(orderData, to) {
     const mailOptions = {
-      from: `"Tulumbak Baklava" <${process.env.SMTP_USER}>`,
+      from: `"Basak Pastanesi Baklava" <${process.env.SMTP_USER}>`,
       to,
-      subject: 'Siparişiniz Teslim Edildi - Tulumbak',
+      subject: 'Siparişiniz Teslim Edildi - Basak Pastanesi',
       html: this.getDeliveryCompletedTemplate(orderData),
     };
 
@@ -495,7 +495,7 @@ class EmailService {
               <p class="total">Toplam Tutar: ₺${orderData.amount.toFixed(2)}</p>
               <p><strong>Ödeme Yöntemi:</strong> ${orderData.paymentMethod}</p>
               <p>Teşekkür ederiz!</p>
-              <p>Tulumbak İzmir Baklava</p>
+              <p>Basak Pastanesi İzmir Baklava</p>
             </div>
           </div>
         </body>
@@ -536,7 +536,7 @@ class EmailService {
               </div>
               <p>Siparişinizi takip etmeye devam edebilirsiniz.</p>
               <p>Teşekkür ederiz!</p>
-              <p>Tulumbak İzmir Baklava</p>
+              <p>Basak Pastanesi İzmir Baklava</p>
             </div>
           </div>
         </body>
@@ -574,7 +574,7 @@ class EmailService {
               ${orderData.courierTrackingId ? `<div class="tracking"><strong>Takip Numarası:</strong> ${orderData.courierTrackingId}</div>` : ''}
               <p>Siparişiniz yakında kapınızda olacak.</p>
               <p>Teşekkür ederiz!</p>
-              <p>Tulumbak İzmir Baklava</p>
+              <p>Basak Pastanesi İzmir Baklava</p>
             </div>
           </div>
         </body>
@@ -613,7 +613,7 @@ class EmailService {
                 <strong>Afiyet olsun! 🧁</strong>
               </div>
               <p>Bizimle alışveriş yaptığınız için teşekkür ederiz. Tekrar görüşmek üzere!</p>
-              <p>Sevgiler,<br>Tulumbak İzmir Baklava</p>
+              <p>Sevgiler,<br>Basak Pastanesi İzmir Baklava</p>
             </div>
           </div>
         </body>

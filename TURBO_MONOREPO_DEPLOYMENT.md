@@ -17,7 +17,7 @@ Yaptığımız değişiklikler ile artık her proje kendi klasöründeki `vercel
 Root dizindeki `vercel.json` dosyaları kaldırıldı/yedeklendi. Artık konfigürasyonlar her uygulamanın kendi içinde:
 
 ```
-tulumbak-master/
+basak-pastanesi-master/
 ├── apps/
 │   ├── web/
 │   │   └── vercel.json       # Web için özel config
@@ -36,7 +36,7 @@ Lütfen Vercel Dashboard'da 3 ayrı proje oluşturun veya mevcut projelerinizi a
 
 ### 1. Web Projesi (Next.js)
 
-*   **Project Name:** `tulumbak-web`
+*   **Project Name:** `basak-pastanesi-web`
 *   **Framework Preset:** Next.js
 *   **Root Directory:** `apps/web` (Edit'e basıp seçin)
 *   **Build Command:** `vercel.json` dosyasından otomatik okunacak. (Manuel girmenize gerek yok)
@@ -44,7 +44,7 @@ Lütfen Vercel Dashboard'da 3 ayrı proje oluşturun veya mevcut projelerinizi a
 
 ### 2. Admin Projesi (Vite)
 
-*   **Project Name:** `tulumbak-admin`
+*   **Project Name:** `basak-pastanesi-admin`
 *   **Framework Preset:** Vite
 *   **Root Directory:** `apps/admin` (Edit'e basıp seçin)
 *   **Build Command:** `vercel.json` dosyasından otomatik okunacak.
@@ -53,7 +53,7 @@ Lütfen Vercel Dashboard'da 3 ayrı proje oluşturun veya mevcut projelerinizi a
 
 ### 3. API Projesi (Express)
 
-*   **Project Name:** `tulumbak-api`
+*   **Project Name:** `basak-pastanesi-api`
 *   **Framework Preset:** Other
 *   **Root Directory:** `apps/api` (Edit'e basıp seçin)
 *   **Build Command:** `vercel.json` dosyasından otomatik okunacak.

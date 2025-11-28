@@ -10,11 +10,18 @@
  * @param {number} statusCode HTTP status code (default: 200)
  */
 export const successResponse = (res, data = null, message = 'Success', statusCode = 200) => {
-    return res.status(statusCode).json({
+    const responseBody = {
         success: true,
         message,
         data
-    });
+    };
+
+    // For object payloads, expose keys at root level as well for backward compatibility
+    if (data && typeof data === 'object' && !Array.isArray(data)) {
+        Object.assign(responseBody, data);
+    }
+
+    return res.status(statusCode).json(responseBody);
 };
 
 /**

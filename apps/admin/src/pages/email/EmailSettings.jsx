@@ -302,7 +302,7 @@ export default function EmailSettings() {
                       <Label htmlFor="from-name">Gönderen Adı</Label>
                       <Input
                         id="from-name"
-                        placeholder="Tulumbak Baklava"
+                        placeholder="Basak Pastanesi Baklava"
                         value={settings?.smtp?.fromName || ""}
                         onChange={(e) => updateSetting("smtp.fromName", e.target.value)}
                       />
@@ -313,7 +313,7 @@ export default function EmailSettings() {
                       <Input
                         id="from-email"
                         type="email"
-                        placeholder="noreply@tulumbak.com"
+                        placeholder="noreply@basakpastanesi.com"
                         value={settings?.smtp?.fromEmail || ""}
                         onChange={(e) => updateSetting("smtp.fromEmail", e.target.value)}
                       />
@@ -571,7 +571,7 @@ export default function EmailSettings() {
                     <Input
                       id="admin-email"
                       type="email"
-                      placeholder="admin@tulumbak.com"
+                      placeholder="admin@basakpastanesi.com"
                       value={settings?.general?.adminEmail || ""}
                       onChange={(e) => updateSetting("general.adminEmail", e.target.value)}
                     />

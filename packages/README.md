@@ -1,6 +1,6 @@
 # Shared Packages
 
-This directory contains shared packages used across all TulumBak applications.
+This directory contains shared packages used across all Başak Pastanesi applications.
 
 ## Packages
 

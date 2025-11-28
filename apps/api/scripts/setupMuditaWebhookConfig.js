@@ -77,7 +77,7 @@ const setupWebhookConfig = async () => {
                     testMode: process.env.MUDITA_TEST_MODE === 'true',
                     webhookConfig: {
                         enabled: true,
-                        url: `${process.env.WEBHOOK_BASE_URL || 'https://api.tulumbak.com'}/api/webhook/muditakurye`,
+                        url: `${process.env.WEBHOOK_BASE_URL || 'https://api.basakpastanesi.com'}/api/webhook/muditakurye`,
                         secretKey: process.env.MUDITA_WEBHOOK_SECRET || 'wh_0rC-rimL096iJALsxXui67-n0LrKWVNlpHknLHn12g4',
                         events: [
                             'order.status.updated',

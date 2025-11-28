@@ -7,7 +7,7 @@ dotenv.config();
 const addDefaultSliders = async () => {
     try {
         // MongoDB bağlantısı
-        const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/tulumbak';
+        const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/basak-pastanesi';
         await mongoose.connect(mongoUri);
         console.log('✅ MongoDB bağlantısı başarılı');
 

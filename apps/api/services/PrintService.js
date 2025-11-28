@@ -157,7 +157,7 @@ class PrintService {
   <div class="receipt">
     <!-- Header -->
     <div class="header">
-      <div class="bold" style="font-size: 16px;">TULUMBAK</div>
+      <div class="bold" style="font-size: 16px;">BAŞAK PASTANESİ</div>
       <div style="font-size: 11px;">KURYE TESLİMAT FİŞİ</div>
     </div>
     <div class="double-separator"></div>
@@ -213,7 +213,7 @@ class PrintService {
     <!-- Footer -->
     <div class="center" style="margin-top: 10px;">
       <div style="font-size: 10px;">Afiyet olsun!</div>
-      <div style="font-size: 9px; margin-top: 5px;">www.tulumbak.com</div>
+      <div style="font-size: 9px; margin-top: 5px;">www.basakpastanesi.com</div>
     </div>
   </div>
 

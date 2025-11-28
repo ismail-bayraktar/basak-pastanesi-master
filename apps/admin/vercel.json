@@ -1,8 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "name": "basak-pastanesi-admin",
   "framework": "vite",
-  "installCommand": "cd ../.. && corepack enable && corepack use pnpm@8.15.8 && pnpm install --frozen-lockfile --prod=false",
-  "buildCommand": "cd ../.. && pnpm turbo run build --filter=@tulumbak/admin...",
+  "installCommand": "pnpm install --prod=false",
+  "buildCommand": "pnpm build",
   "outputDirectory": "dist",
   "ignoreCommand": "npx turbo-ignore",
   "rewrites": [

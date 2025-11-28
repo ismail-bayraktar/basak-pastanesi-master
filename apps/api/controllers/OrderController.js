@@ -99,12 +99,12 @@ const placeOrder = async (req, res) => {
         // Find best branch (suggestion or direct assignment)
         let bestBranch = assignmentEnabled ? await AssignmentService.findBestBranch({ delivery, address }) : null;
 
-        // FALLBACK: If no branch found, use default branch (TULUMBAK_MAIN)
+        // FALLBACK: If no branch found, use default branch (BASAK_PASTANESI_MAIN)
         if (!bestBranch) {
             try {
-                bestBranch = await branchModel.findOne({ code: 'TULUMBAK_MAIN', status: 'active' });
+                bestBranch = await branchModel.findOne({ code: 'BASAK_PASTANESI_MAIN', status: 'active' });
                 if (bestBranch) {
-                    logger.info('Using default branch for new order', { branchCode: 'TULUMBAK_MAIN' });
+                    logger.info('Using default branch for new order', { branchCode: 'BASAK_PASTANESI_MAIN' });
                 }
             } catch (error) {
                 logger.warn('Could not find default branch', { error: error.message });
@@ -347,7 +347,7 @@ const bankInfo = async (_req, res) => {
         successResponse(res, {
             bank: {
                 iban: process.env.BANK_IBAN || 'TR00 0000 0000 0000 0000 0000 00',
-                accountName: process.env.BANK_ACCOUNT_NAME || 'Tulumbak Gıda',
+                accountName: process.env.BANK_ACCOUNT_NAME || 'Basak Pastanesi Gıda',
                 bankName: process.env.BANK_NAME || 'Banka'
             }
         });
@@ -723,6 +723,79 @@ const deleteOrder = async (req, res) => {
     }
 };
 
+/**
+ * Reorder - Add items from previous order to cart
+ */
+const reorder = async (req, res) => {
+    try {
+        const userId = req.body.userId;
+        const { orderId } = req.params;
+
+        if (!userId) {
+            return errorResponse(res, 'Kullanıcı kimliği gereklidir', 401);
+        }
+
+        // Get the order
+        const order = await orderModel.findById(orderId);
+        if (!order) {
+            return errorResponse(res, 'Sipariş bulunamadı', 404);
+        }
+
+        // Verify order belongs to user (if order has userId)
+        if (order.userId && order.userId.toString() !== userId) {
+            return errorResponse(res, 'Bu sipariş size ait değil', 403);
+        }
+
+        // Get user
+        const user = await userModel.findById(userId);
+        if (!user) {
+            return errorResponse(res, 'Kullanıcı bulunamadı', 404);
+        }
+
+        // Get current cart
+        let cartData = user.cartData || {};
+
+        // Add order items to cart
+        if (order.items && Array.isArray(order.items)) {
+            order.items.forEach(item => {
+                const itemId = item.id || item.productId;
+                const size = item.size || 'default';
+                const quantity = item.quantity || 1;
+
+                if (!cartData[itemId]) {
+                    cartData[itemId] = {};
+                }
+
+                // Add to existing quantity or set new quantity
+                if (cartData[itemId][size]) {
+                    cartData[itemId][size] += quantity;
+                } else {
+                    cartData[itemId][size] = quantity;
+                }
+            });
+
+            // Update user cart
+            await userModel.findByIdAndUpdate(userId, { cartData });
+
+            logger.info('Order reordered', { userId, orderId, itemsCount: order.items.length });
+            successResponse(res, { 
+                cartData,
+                message: `${order.items.length} ürün sepete eklendi`
+            });
+        } else {
+            return errorResponse(res, 'Siparişte ürün bulunamadı', 400);
+        }
+    } catch (error) {
+        logger.error('Error reordering', {
+            error: error.message,
+            stack: error.stack,
+            orderId: req.params.orderId,
+            userId: req.body.userId
+        });
+        errorResponse(res, 'Tekrar sipariş verilirken hata oluştu: ' + error.message);
+    }
+};
+
 export {
     placeOrder,
     allOrders,
@@ -737,5 +810,6 @@ export {
     getBranchSuggestion,
     prepareOrder,
     sendToCourier,
-    deleteOrder
+    deleteOrder,
+    reorder
 };

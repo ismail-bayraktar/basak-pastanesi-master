@@ -15,7 +15,7 @@ const NOTIFICATION_TYPES = [
   { id: 'lowStock', name: 'Düşük Stok', description: 'Ürün stoğu azaldığında bildirim al' },
 ]
 
-const STORAGE_KEY = 'tulumbak_notification_settings'
+const STORAGE_KEY = 'basak_pastanesi_notification_settings'
 
 export function useNotificationSettings() {
   const [permission, setPermission] = useState('default')

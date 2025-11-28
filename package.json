@@ -1,14 +1,14 @@
 {
-  "name": "tulumbak-monorepo",
+  "name": "basak-pastanesi-monorepo",
   "version": "1.0.0",
   "private": true,
   "engines": {
     "node": "20.x"
   },
-  "description": "TulumBak E-commerce Turborepo Monorepo",
+  "description": "Başak Pastanesi E-commerce Turborepo Monorepo",
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --parallel",
     "start": "turbo run start",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",

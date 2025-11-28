@@ -109,7 +109,7 @@ const courierIntegrationConfigSchema = new mongoose.Schema({
         },
         url: {
             type: String,
-            default: process.env.WEBHOOK_BASE_URL || 'https://api.tulumbak.com/api/webhook/courier'
+            default: process.env.WEBHOOK_BASE_URL || 'https://api.basakpastanesi.com/api/webhook/courier'
         },
         secretKey: {
             type: String

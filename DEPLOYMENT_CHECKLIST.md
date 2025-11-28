@@ -34,7 +34,7 @@ Vercel otomatik deploy edecek veya Vercel Dashboard'dan manuel tetikleyebilirsin
 
 ### 2. Environment Variables Kontrol
 
-**Vercel Dashboard > tulumbak-api > Settings > Environment Variables**
+**Vercel Dashboard > basak-pastanesi-api > Settings > Environment Variables**
 
 `MONGODB_URI` değerinizin sonuna şunları ekleyin:
 
@@ -56,13 +56,13 @@ Deploy sonrası test edin:
 
 ```bash
 # Product list (en yoğun endpoint)
-https://tulumbak-api.vercel.app/api/product/list
+https://basak-pastanesi-api.vercel.app/api/product/list
 
 # Category list
-https://tulumbak-api.vercel.app/api/category/active
+https://basak-pastanesi-api.vercel.app/api/category/active
 
 # Homepage data
-https://tulumbak-api.vercel.app/api/slider/list
+https://basak-pastanesi-api.vercel.app/api/slider/list
 ```
 
 ### 4. Performans İzleme

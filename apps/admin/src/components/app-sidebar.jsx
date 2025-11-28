@@ -29,7 +29,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 
-// Tulumbak Admin menu data
+// Basak Pastanesi Admin menu data
 // RULE: NO EMOJIS! ONLY LUCIDE ICONS!
 const data = {
   user: {

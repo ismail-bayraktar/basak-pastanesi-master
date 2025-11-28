@@ -45,20 +45,16 @@ export default function ProductAdd() {
     basePrice: "",
     category: "",
     subCategory: "",
-    sizes: [],
-    weights: [],
     freshType: "taze",
     packaging: "standart",
     giftWrap: false,
     labels: [],
-    personCounts: [],
     bestseller: false,
     stock: "",
     allergens: "",
     ingredients: "",
     shelfLife: "",
     storageInfo: "",
-    sizePrices: [],
     barcode: "",
     sku: "", // Manuel SKU
   })
@@ -70,8 +66,6 @@ export default function ProductAdd() {
     fetchActiveCategories()
   }, [fetchActiveCategories])
 
-  const sizeOptions = [250, 500, 1000, 2000]
-  const personCountOptions = ["2-3", "5-6", "8-10", "12+"]
   const labelOptions = ["Yeni", "İndirimde", "Öne Çıkan", "Sınırlı Üretim"]
 
   const handleImageUpload = (index, file) => {
@@ -97,16 +91,6 @@ export default function ProductAdd() {
     }))
   }
 
-  const handleSizePriceChange = (size, price) => {
-    setFormData((prev) => {
-      const sizePrices = prev.sizePrices.filter((sp) => sp.size !== size)
-      if (price) {
-        sizePrices.push({ size: Number(size), price: Number(price) })
-      }
-      return { ...prev, sizePrices }
-    })
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -125,24 +109,6 @@ export default function ProductAdd() {
         variant: "destructive",
         title: "Görsel Gerekli",
         description: "En az bir ürün görseli yüklemelisiniz",
-      })
-      return
-    }
-
-    if (formData.sizes.length === 0) {
-      toast({
-        variant: "destructive",
-        title: "Gramaj Seçin",
-        description: "En az bir gramaj seçmelisiniz",
-      })
-      return
-    }
-
-    if (formData.personCounts.length === 0) {
-      toast({
-        variant: "destructive",
-        title: "Kişi Sayısı Seçin",
-        description: "En az bir kişi sayısı seçmelisiniz",
       })
       return
     }
@@ -186,20 +152,16 @@ export default function ProductAdd() {
           basePrice: "",
           category: "",
           subCategory: "",
-          sizes: [],
-          weights: [],
           freshType: "taze",
           packaging: "standart",
           giftWrap: false,
           labels: [],
-          personCounts: [],
           bestseller: false,
           stock: "",
           allergens: "",
           ingredients: "",
           shelfLife: "",
           storageInfo: "",
-          sizePrices: [],
           barcode: "",
           sku: "",
         })
@@ -246,7 +208,7 @@ export default function ProductAdd() {
               Yeni Ürün Ekle
             </h1>
             <p className="text-muted-foreground mt-1">
-              Tulumbak ürün kataloğuna yeni ürün ekleyin
+              Basak Pastanesi ürün kataloğuna yeni ürün ekleyin
             </p>
           </div>
 
@@ -452,73 +414,13 @@ export default function ProductAdd() {
               </CardContent>
             </Card>
 
-            {/* Size & Pricing */}
+            {/* Product Type */}
             <Card>
               <CardHeader>
-                <CardTitle>Gramaj ve Fiyatlandırma</CardTitle>
-                <CardDescription>Ürün gramajlarını seçin ve özel fiyatlar belirleyin</CardDescription>
+                <CardTitle>Ürün Tipi</CardTitle>
+                <CardDescription>Ürünün üretim ve paketleme tercihlerini belirleyin</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <Label>Gramaj Seçenekleri *</Label>
-                  <div className="flex flex-wrap gap-2">
-                    {sizeOptions.map((size) => (
-                      <Badge
-                        key={size}
-                        variant={formData.sizes.includes(size) ? "default" : "outline"}
-                        className="cursor-pointer"
-                        onClick={() => toggleArrayValue("sizes", size)}
-                      >
-                        {size}g
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
-                {formData.sizes.length > 0 && (
-                  <div className="space-y-2">
-                    <Label>Gramaj Bazında Özel Fiyat (opsiyonel)</Label>
-                    <div className="grid gap-2 md:grid-cols-2">
-                      {formData.sizes.map((size) => (
-                        <div key={size} className="flex items-center gap-2">
-                          <span className="text-sm w-16">{size}g:</span>
-                          <Input
-                            type="number"
-                            placeholder={`Fiyat (varsayılan: ₺${formData.basePrice})`}
-                            step="0.01"
-                            onChange={(e) => handleSizePriceChange(size, e.target.value)}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-
-            {/* Person Count & Type */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Porsiyon ve Tip</CardTitle>
-                <CardDescription>Kişi sayısı ve ürün tipini belirleyin</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <Label>Kişi Sayısı *</Label>
-                  <div className="flex flex-wrap gap-2">
-                    {personCountOptions.map((count) => (
-                      <Badge
-                        key={count}
-                        variant={formData.personCounts.includes(count) ? "default" : "outline"}
-                        className="cursor-pointer"
-                        onClick={() => toggleArrayValue("personCounts", count)}
-                      >
-                        {count} kişi
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-2">
                     <Label>Ürün Tipi</Label>

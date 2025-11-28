@@ -10,7 +10,7 @@ class SmsService {
     this.provider = process.env.SMS_PROVIDER || 'netgsm'; // netgsm, mesajpanel, etc.
     this.apiUrl = process.env.SMS_API_URL;
     this.apiKey = process.env.SMS_API_KEY;
-    this.sender = process.env.SMS_SENDER || 'TULUMBAK';
+    this.sender = process.env.SMS_SENDER || 'BAŞAK PASTANESİ';
     this.enabled = process.env.SMS_ENABLED === 'true';
   }
 
@@ -153,7 +153,7 @@ class SmsService {
    * @returns {Promise<Object>}
    */
   async sendOrderConfirmation(phoneNumber, orderData) {
-    const message = `Siparişiniz alındı! Sipariş No: #${orderData.orderId || orderData._id}. Teşekkürler - Tulumbak`;
+    const message = `Siparişiniz alındı! Sipariş No: #${orderData.orderId || orderData._id}. Teşekkürler - Basak Pastanesi`;
     return await this.sendSms(phoneNumber, message);
   }
 
@@ -165,7 +165,7 @@ class SmsService {
    * @returns {Promise<Object>}
    */
   async sendOrderStatusUpdate(phoneNumber, status, orderId) {
-    const message = `Sipariş #${orderId} durumu: ${status} - Tulumbak`;
+    const message = `Sipariş #${orderId} durumu: ${status} - Basak Pastanesi`;
     return await this.sendSms(phoneNumber, message);
   }
 
@@ -177,7 +177,7 @@ class SmsService {
    */
   async sendCourierAssigned(phoneNumber, orderData) {
     const tracking = orderData.courierTrackingId ? ` Takip No: ${orderData.courierTrackingId}` : '';
-    const message = `Siparişiniz yola çıktı!${tracking} - Tulumbak`;
+    const message = `Siparişiniz yola çıktı!${tracking} - Basak Pastanesi`;
     return await this.sendSms(phoneNumber, message);
   }
 
@@ -188,7 +188,7 @@ class SmsService {
    * @returns {Promise<Object>}
    */
   async sendDeliveryCompleted(phoneNumber, orderId) {
-    const message = `Siparişiniz #${orderId} teslim edildi! Afiyet olsun 🧁 - Tulumbak`;
+    const message = `Siparişiniz #${orderId} teslim edildi! Afiyet olsun 🧁 - Basak Pastanesi`;
     return await this.sendSms(phoneNumber, message);
   }
 }

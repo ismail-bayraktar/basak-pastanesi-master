@@ -12,7 +12,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
-import { Checkbox } from "@/components/ui/checkbox"
 import {
   Select,
   SelectContent,
@@ -51,13 +50,10 @@ export default function ProductEditSheet({ open, onOpenChange, product, onSucces
     subCategory: "",
     stock: 0,
     bestseller: false,
-    sizes: [],
-    weights: [],
     freshType: "taze",
     packaging: "standart",
     giftWrap: false,
     labels: [],
-    personCounts: [],
     allergens: "",
     ingredients: "",
     shelfLife: "",
@@ -85,13 +81,10 @@ export default function ProductEditSheet({ open, onOpenChange, product, onSucces
         subCategory: product.subCategory || "",
         stock: product.stock || 0,
         bestseller: product.bestseller || false,
-        sizes: product.sizes || [],
-        weights: product.weights || [],
         freshType: product.freshType || "taze",
         packaging: product.packaging || "standart",
         giftWrap: product.giftWrap || false,
         labels: product.labels || [],
-        personCounts: product.personCounts || [],
         allergens: product.allergens || "",
         ingredients: product.ingredients || "",
         shelfLife: product.shelfLife || "",
@@ -173,41 +166,6 @@ export default function ProductEditSheet({ open, onOpenChange, product, onSucces
     return null
   }
 
-  const toggleSize = (size) => {
-    setFormData(prev => ({
-      ...prev,
-      sizes: prev.sizes.includes(size)
-        ? prev.sizes.filter(s => s !== size)
-        : [...prev.sizes, size],
-    }))
-  }
-
-  const updateWeightPrice = (size, price) => {
-    setFormData(prev => {
-      const weights = prev.weights || []
-      const existingIndex = weights.findIndex(w => w.size === size)
-
-      if (existingIndex >= 0) {
-        // Update existing
-        const updated = [...weights]
-        updated[existingIndex] = { size, price: parseFloat(price) || 0 }
-        return { ...prev, weights: updated }
-      } else {
-        // Add new
-        return { ...prev, weights: [...weights, { size, price: parseFloat(price) || 0 }] }
-      }
-    })
-  }
-
-  const togglePersonCount = (count) => {
-    setFormData(prev => ({
-      ...prev,
-      personCounts: prev.personCounts.includes(count)
-        ? prev.personCounts.filter(c => c !== count)
-        : [...prev.personCounts, count],
-    }))
-  }
-
   const handleSubmit = async () => {
     // Validation
     if (!formData.name || !formData.description || !formData.category) {
@@ -240,10 +198,7 @@ export default function ProductEditSheet({ open, onOpenChange, product, onSucces
       submitData.append("giftWrap", formData.giftWrap)
 
       // Arrays
-      submitData.append("sizes", JSON.stringify(formData.sizes))
-      submitData.append("weights", JSON.stringify(formData.weights))
       submitData.append("labels", JSON.stringify(formData.labels))
-      submitData.append("personCounts", JSON.stringify(formData.personCounts))
 
       // Additional info
       submitData.append("allergens", formData.allergens)
@@ -502,79 +457,9 @@ export default function ProductEditSheet({ open, onOpenChange, product, onSucces
             </div>
           </div>
 
-          {/* Gramaj & Fiyatlandırma Section */}
-          <div className="grid gap-4 border-t pt-4">
-            <h3 className="font-semibold">Gramaj & Fiyatlandırma</h3>
-
-            <div className="space-y-3">
-              {[250, 500, 750, 1000].map((size) => {
-                const weightData = formData.weights?.find(w => w.size === size)
-                const isSelected = formData.sizes.includes(size)
-
-                return (
-                  <div key={size} className="flex items-center gap-4 p-3 border rounded-lg">
-                    <Checkbox
-                      id={`size-${size}`}
-                      checked={isSelected}
-                      onCheckedChange={() => toggleSize(size)}
-                    />
-                    <Label htmlFor={`size-${size}`} className="font-medium min-w-[80px]">
-                      {size}g
-                    </Label>
-                    {isSelected && (
-                      <div className="flex items-center gap-2 flex-1">
-                        <Label className="text-sm text-muted-foreground">Fiyat:</Label>
-                        <Input
-                          type="number"
-                          step="0.01"
-                          placeholder="0.00"
-                          className="w-32"
-                          value={weightData?.price || ''}
-                          onChange={(e) => updateWeightPrice(size, e.target.value)}
-                        />
-                        <span className="text-sm text-muted-foreground">₺</span>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-
-            <div className="grid gap-2">
-              <Label>Temel Fiyat (₺)</Label>
-              <Input
-                type="number"
-                step="0.01"
-                value={formData.basePrice}
-                onChange={(e) => setFormData({ ...formData, basePrice: parseFloat(e.target.value) || 0 })}
-              />
-              <p className="text-xs text-muted-foreground">
-                Gramaj fiyatı belirtilmemiş seçenekler için kullanılır
-              </p>
-            </div>
-          </div>
-
           {/* Options */}
           <div className="grid gap-4 border-t pt-4">
             <h3 className="font-semibold">Özellikler</h3>
-
-            <div className="grid gap-2">
-              <Label>Kişi Sayısı</Label>
-              <div className="flex flex-wrap gap-3">
-                {["2-3", "5-6", "8-10", "12+"].map((count) => (
-                  <div key={count} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={`person-${count}`}
-                      checked={formData.personCounts.includes(count)}
-                      onCheckedChange={() => togglePersonCount(count)}
-                    />
-                    <Label htmlFor={`person-${count}`} className="font-normal cursor-pointer">
-                      {count} kişi
-                    </Label>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="grid gap-2">

@@ -103,7 +103,7 @@ emailRouter.post('/settings/test', async (req, res) => {
 
     // Send test email
     const result = await emailService.sendEmail({
-      from: `"Tulumbak Baklava Test" <${user}>`,
+      from: `"Basak Pastanesi Baklava Test" <${user}>`,
       to: testEmail,
       subject: 'Test Email - SMTP Configuration',
       html: '<h1>Success!</h1><p>Your SMTP configuration is working correctly.</p>',

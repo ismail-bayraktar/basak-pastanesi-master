@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 /**
  * Branch Model
- * Handles Tulumbak branch/shop management
+ * Handles Basak Pastanesi branch/shop management
  */
 const branchSchema = new mongoose.Schema({
     name: {

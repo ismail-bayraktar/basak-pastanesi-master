@@ -160,7 +160,7 @@ export default function Orders() {
               <Breadcrumb>
                 <BreadcrumbList>
                   <BreadcrumbItem className="hidden md:block">
-                    <BreadcrumbLink href="/dashboard">Tulumbak Admin</BreadcrumbLink>
+                    <BreadcrumbLink href="/dashboard">Basak Pastanesi Admin</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator className="hidden md:block" />
                   <BreadcrumbItem>

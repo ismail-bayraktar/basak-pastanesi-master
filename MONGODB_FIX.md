@@ -29,7 +29,7 @@ Eğer daha kısıtlı bir access istiyorsanız:
 ### 1. MongoDB URI kontrolü
 
 Vercel Dashboard'da environment variables'ınızı kontrol edin:
-- Proje: `tulumbak-api`
+- Proje: `basak-pastanesi-api`
 - Settings > Environment Variables
 - `MONGODB_URI` değişkeninin doğru olduğundan emin olun
 
@@ -50,8 +50,8 @@ IP whitelist güncellemesinden sonra:
 
 1. Birkaç dakika bekleyin (değişiklikler yayılana kadar)
 2. API endpoint'lerinizi test edin:
-   - https://tulumbak-api.vercel.app/api/product/list
-   - https://tulumbak-api.vercel.app/api/category/active
+   - https://basak-pastanesi-api.vercel.app/api/product/list
+   - https://basak-pastanesi-api.vercel.app/api/category/active
 
 3. Eğer hala hata alırsanız, Vercel logs'unu kontrol edin:
    ```

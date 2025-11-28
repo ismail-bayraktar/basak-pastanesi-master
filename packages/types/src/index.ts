@@ -37,7 +37,6 @@ export type {
 
 // Product types
 export type {
-  SizePrice,
   ProductCategory,
   Product,
   ProductListResponse,

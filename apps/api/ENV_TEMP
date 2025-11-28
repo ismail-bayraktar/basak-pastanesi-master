@@ -1,0 +1,30 @@
+MONGODB_URI=mongodb+srv://ismailbayraktardev_db_user:C7QWO4lX5vM2y9SX@basak-pastanesidb.hz9vkny.mongodb.net/?appName=basak-pastanesidb
+CLOUDINARY_CLOUD_NAME=dhwionhqf
+CLOUDINARY_API_KEY=663314383156485
+CLOUDINARY_API_SECRET=cpIF4M2VGPgfzE6HUZ3q7FwgkL0
+JWT_SECRET=2df341798af6962504076d2b8a1f3c2b894b4400bb460b2721cc069cde7d0bcd02d6a92fc75cf98f383d97574ee916767f35766086a5e564312b9133c5cf6c85
+CLIENT_URL=https://basakpastanesi.com
+ADMIN_URL=https://admin.basakpastanesi.com
+PORT=4001
+
+# Mudita Kurye Entegrasyonu
+MUDITA_API_USER=api_sqty7uez6ucfzqda
+MUDITA_API_PASSWORD=ioql32fM0Rmpa3QzZTHayh4bn5e6X1bg
+MUDITA_API_KEY=yk_3c367a81a4a645b098c09f297f8ee58f
+MUDITA_RESTAURANT_ID=rest_a25f3efe4cf14c76b875
+
+# PayTR
+MERCHANT_ID=
+MERCHANT_KEY=
+MERCHANT_SALT=
+TEST_MODE=0
+
+# Mail Settings
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=465
+MAIL_USER=info@basakpastanesi.com
+MAIL_PASS=
+
+# Encryption
+WEBHOOK_ENCRYPTION_KEY=d20f69844dda59925e24e3c195a16b88ef685ed079b5631c2e69fd4fb0c8be85
+

@@ -4,7 +4,7 @@
 # 1. README.md - Ana giriş dosyası
 readme_content = """# MuditaKurye Entegrasyon Dokümantasyonu
 
-> Tulumbak E-Ticaret Sistemi için MuditaKurye Kurye Entegrasyonu
+> Basak Pastanesi E-Ticaret Sistemi için MuditaKurye Kurye Entegrasyonu
 
 ## 📋 İçindekiler
 
@@ -57,7 +57,7 @@ MUDITAKURYE_CANCEL_WEBHOOK_URL=https://yourapi.com/webhook/cancel
 ### İş Akışı
 
 ```
-Tulumbak Sipariş → MuditaKurye API → Kurye Atama → Durum Güncellemeleri (Webhook)
+Basak Pastanesi Sipariş → MuditaKurye API → Kurye Atama → Durum Güncellemeleri (Webhook)
 ```
 
 ### Sipariş Durumları

@@ -11,7 +11,7 @@ import axios from 'axios';
 import 'dotenv/config';
 
 const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:4001';
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@tulumbak.com';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@basakpastanesi.com';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123';
 
 let authToken = null;

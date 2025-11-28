@@ -13,7 +13,8 @@ import {
     getBranchSuggestion,
     prepareOrder,
     sendToCourier,
-    deleteOrder
+    deleteOrder,
+    reorder
 } from '../controllers/OrderController.js';
 import adminAuth from "../middleware/AdminAuth.js";
 import authUser from "../middleware/Auth.js";
@@ -40,6 +41,7 @@ orderRouter.post("/place", optionalAuth, checkStockAvailability, RateLimiterServ
 
 // user feature
 orderRouter.post("/userorders", authUser, userOrders);
+orderRouter.post("/reorder/:orderId", authUser, reorder);
 orderRouter.put("/update-paytr-order", authUser, updatePayTrOrderItemsAndAddress);
 orderRouter.get("/bank-info", bankInfo);
 
