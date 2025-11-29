@@ -1,11 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "name": "basak-pastanesi-admin",
+  "buildCommand": "turbo run build --filter=@basak-pastanesi/admin",
+  "outputDirectory": "apps/admin/dist",
+  "installCommand": "pnpm install --frozen-lockfile",
   "framework": "vite",
-  "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
-  "buildCommand": "cd ../.. && pnpm --filter @basak-pastanesi/admin build",
-  "outputDirectory": "dist",
-  "ignoreCommand": "npx turbo-ignore",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
