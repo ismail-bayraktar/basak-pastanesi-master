@@ -3,7 +3,6 @@
   "name": "basakpastanesi-api",
   "version": 2,
   "buildCommand": "echo 'No build step required'",
-  "ignoreCommand": "npx turbo-ignore",
   "outputDirectory": ".",
   "functions": {
     "api/index.js": {
