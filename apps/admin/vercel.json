@@ -3,6 +3,7 @@
   "buildCommand": "turbo run build --filter=@basak-pastanesi/admin",
   "outputDirectory": "dist",
   "installCommand": "pnpm install --frozen-lockfile",
+  "ignoreCommand": "git diff HEAD^ HEAD --quiet . && exit 1 || exit 0",
   "framework": "vite",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
