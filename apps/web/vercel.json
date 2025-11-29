@@ -2,6 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
   "outputDirectory": "dist",
+  "buildCommand": "cd ../.. && pnpm install --frozen-lockfile && pnpm --filter @repo/constants --filter @repo/types --filter @repo/utils build && cd apps/web && pnpm build",
+  "installCommand": "echo 'Install handled in buildCommand'",
   "ignoreCommand": "npx turbo-ignore",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
