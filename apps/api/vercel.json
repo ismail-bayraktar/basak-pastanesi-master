@@ -1,35 +1,15 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "name": "basakpastanesi-api",
   "version": 2,
-  "buildCommand": "echo 'No build step required'",
-  "outputDirectory": ".",
-  "functions": {
-    "api/index.js": {
-      "maxDuration": 60,
-      "memory": 3008,
-      "runtime": "nodejs20.x"
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/api/index.js"
+      "src": "api/index.js",
+      "use": "@vercel/node"
     }
   ],
-  "headers": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Credentials", "value": "true" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET,DELETE,PATCH,POST,PUT,OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization, token" }
-      ]
+      "src": "/(.*)",
+      "dest": "/api/index.js"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production",
-    "VERCEL": "1"
-  }
+  ]
 }
