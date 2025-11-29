@@ -311,3 +311,4 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 export default app;
+// CORS configured for production domains
