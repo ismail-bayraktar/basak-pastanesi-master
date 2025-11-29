@@ -52,7 +52,7 @@ Write-Host ""
 Write-Host "[3/8] Adding Database Configuration..." -ForegroundColor Cyan
 Write-Host ""
 
-Add-VercelEnv -Name "MONGODB_URI" -Value "mongodb+srv://tulumbak_db_user:XuWKSZKqg3apdhSD@tulumbak-db.ljzlo7e.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=tulumbak-db"
+Add-VercelEnv -Name "MONGODB_URI" -Value "mongodb+srv://ismailbayraktardev_db_user:1A9nXYHXclHq3wWP@basak-pastanesidb.hz9vkny.mongodb.net/basak-pastanesi?retryWrites=true&w=majority&appName=basak-pastanesidb"
 
 Write-Host ""
 Write-Host "[4/8] Adding Cloudinary Configuration..." -ForegroundColor Cyan
@@ -82,8 +82,8 @@ Write-Host ""
 Write-Host "[7/8] Adding URLs and CORS..." -ForegroundColor Cyan
 Write-Host ""
 
-Add-VercelEnv -Name "FRONTEND_URL" -Value "https://basakpastanesi-web.vercel.app"
-Add-VercelEnv -Name "CORS_ORIGINS" -Value "https://basakpastanesi-web.vercel.app,https://basakpastanesi-admin.vercel.app"
+Add-VercelEnv -Name "FRONTEND_URL" -Value "https://www.basakpasta.com.tr"
+Add-VercelEnv -Name "CORS_ORIGINS" -Value "https://basakpasta.com.tr,https://www.basakpasta.com.tr,https://basak-pastanesi-master-web.vercel.app,https://basak-pastanesi-admin.vercel.app"
 Add-VercelEnv -Name "CSP_IMAGE_SOURCES" -Value "'self',data:,https://res.cloudinary.com"
 
 Write-Host ""

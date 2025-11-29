@@ -57,9 +57,9 @@ echo ""
 echo -e "${YELLOW}📌 Database Configuration...${NC}"
 echo ""
 
-# MONGODB_URI
+# MONGODB_URI - Dedicated Basak Pastanesi MongoDB Atlas
 echo "🗄️ MONGODB_URI (production)"
-vercel env add MONGODB_URI production <<< "mongodb+srv://tulumbak_db_user:XuWKSZKqg3apdhSD@tulumbak-db.ljzlo7e.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=tulumbak-db"
+vercel env add MONGODB_URI production <<< "mongodb+srv://ismailbayraktardev_db_user:1A9nXYHXclHq3wWP@basak-pastanesidb.hz9vkny.mongodb.net/basak-pastanesi?retryWrites=true&w=majority&appName=basak-pastanesidb"
 
 echo ""
 echo -e "${YELLOW}📌 Cloudinary Configuration...${NC}"
@@ -107,13 +107,13 @@ echo ""
 echo -e "${YELLOW}📌 URLs and CORS...${NC}"
 echo ""
 
-# Frontend URL (şimdilik placeholder, sonra güncellenecek)
+# Frontend URL - Production domain
 echo "🌐 FRONTEND_URL (production)"
-vercel env add FRONTEND_URL production <<< "https://basakpastanesi-web.vercel.app"
+vercel env add FRONTEND_URL production <<< "https://www.basakpasta.com.tr"
 
-# CORS Origins
+# CORS Origins - All allowed origins
 echo "🌐 CORS_ORIGINS (production)"
-vercel env add CORS_ORIGINS production <<< "https://basakpastanesi-web.vercel.app,https://basakpastanesi-admin.vercel.app"
+vercel env add CORS_ORIGINS production <<< "https://basakpasta.com.tr,https://www.basakpasta.com.tr,https://basak-pastanesi-master-web.vercel.app,https://basak-pastanesi-admin.vercel.app"
 
 # CSP Image Sources
 echo "🖼️ CSP_IMAGE_SOURCES (production)"
