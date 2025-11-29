@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "buildCommand": "turbo run build --filter=@basak-pastanesi/web",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "framework": null,
+  "nodeVersion": "20.x"
+}
