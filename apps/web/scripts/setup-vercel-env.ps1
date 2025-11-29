@@ -40,8 +40,8 @@ Write-Host "NOTE: Update these URLs after API deployment!" -ForegroundColor Yell
 Write-Host ""
 
 # Backend URL (will be updated after API deployment)
-Add-VercelEnv -Name "VITE_BACKEND_URL" -Value "https://basakpastanesi-api.vercel.app"
-Add-VercelEnv -Name "VITE_API_URL" -Value "https://basakpastanesi-api.vercel.app/api"
+Add-VercelEnv -Name "VITE_BACKEND_URL" -Value "https://api-teal-omega-36.vercel.app"
+Add-VercelEnv -Name "VITE_API_URL" -Value "https://api-teal-omega-36.vercel.app/api"
 
 Write-Host ""
 Write-Host "All environment variables added successfully!" -ForegroundColor Green
